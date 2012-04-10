@@ -23,6 +23,10 @@ group :assets do
   gem 'bootstrap-sass'
 end
 
+group :development, :test do
+  gem 'debugger'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -39,3 +43,4 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
