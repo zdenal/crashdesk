@@ -1,24 +1,15 @@
 class AppsController < ApplicationController
-  # GET /apps
-  # GET /apps.json
-  def index
-    @apps = App.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @apps }
-    end
+  respond_to :json
+
+  def index
+    respond_with App.all
   end
 
   # GET /apps/1
   # GET /apps/1.json
   def show
-    @app = App.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @app }
-    end
+    respond_with App.find(params[:id])
   end
 
   # GET /apps/new
