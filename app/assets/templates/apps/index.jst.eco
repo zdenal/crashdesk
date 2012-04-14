@@ -1,4 +1,3 @@
-<% console.log(@apps.fetch()) %>
 <h1>Apps <%= @apps.length %></h1>
 <table class="table table-striped">
   <thead>
@@ -29,4 +28,4 @@
   </tbody>
 </table>
 
-<a href="#" class="btn btn-primary">New</a>
+<a href="#" id="new_app" class="btn btn-primary">New</a>

@@ -1,4 +1,4 @@
 class Crashdesk.Collections.Apps extends Backbone.Collection
 
-  url   : 'api/apps'
+  url   : '/api/apps'
   model : Crashdesk.Models.App

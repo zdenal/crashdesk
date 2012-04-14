@@ -13,5 +13,3 @@ class Crashdesk.Routers.Apps extends Backbone.Router
 
   show: (id) ->
     alert "App #{id}"
-
-  nothing: ->
