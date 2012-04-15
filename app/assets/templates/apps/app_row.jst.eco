@@ -1,0 +1,11 @@
+<td><%= @app.get('id') %></td>
+<td>
+	<a hrer="#"><%= @app.get('name') %></a>
+</td>
+<td><%= @app.get('created_at') %></td>
+<td>
+	<a href= "#" class = 'edit btn btn-mini' >Edit</a>
+	<a href="#" class="destroy btn btn-mini btn-danger">
+		Destroy
+	</a>
+</td>

@@ -1,0 +1,40 @@
+<form class="form-horizontal">
+
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>New App</h3>
+	</div>
+
+
+	<div class="modal-body">
+		<div class="control-group <%= 'error' if @errors?.name %>">
+			<label for="app_name" class="control-label">Name</label>
+			<div class="controls">
+				<input type="text" class="text_field" id="app_name"
+					name="app[name]" size="30" value="<%= @app.get('name') %>" />
+				<span class="help-inline">
+					<%= @errors?.name %>
+				</span>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label for="app_app_type_id" class="control-label">App type</label>
+			<div class="controls">
+				<select class="text_field" id="app_app_type_id" name="app[app_type_id]">
+					<option value="1">Ruby on Rails</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-actions">
+			<% if @app.isNew(): %>
+				<input type="submit" class="btn btn-primary" value="Create App" />
+			<% else: %>
+				<input type="submit" class="btn btn-primary" value="Update App" />
+			<% end %>
+			<a href="#" data-dismiss="modal" class="btn">Cancel</a>
+		</div>
+	</div>
+
+</form>

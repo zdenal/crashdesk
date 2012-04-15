@@ -1,4 +1,4 @@
-<h1>Apps <%= @apps.length %></h1>
+<h1>Apps</h1>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -8,23 +8,7 @@
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody>
-    <% for app in @apps.models: %>
-      <tr>
-        <td><%= app.get('id') %></td>
-        <td>
-          <a hrer="#"><%= app.get('name') %></a>
-        </td>
-        <td><%= app.get('created_at') %></td>
-        <td>
-          <a href= "#" class = 'btn btn-mini' >Edit</a>
-          <a href="#" class="btn btn-mini btn-danger"
-              data-confirm="Are you sure?" data-method="delete" rel="nofollow">
-            Destroy
-          </a>
-        </td>
-      </tr>
-    <% end %>
+  <tbody id="apps_list">
   </tbody>
 </table>
 
