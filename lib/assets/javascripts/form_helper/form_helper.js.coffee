@@ -6,17 +6,20 @@ class @FormHelper
     else
       throw new Error 'Please set name for model.'
 
-  label: (attr, title, options={}) ->
+  label: (attr, title, html_options={}) ->
     if _.isObject(title)
       [title, options] = [@attr2name(attr), title]
-    JST['form_helper/templates/label'] @basics4attr(attr, title, options)
+    JST['form_helper/templates/label'] @basics4attr(attr, title, html_options)
 
-  text_field: (attr, title, options={}) ->
+  text_field: (attr, title, html_options={}) ->
     if _.isObject(title)
       [title, options] = [@attr2name(attr), title]
-    JST['form_helper/templates/text_field'] @basics4attr(attr, title, options)
+    JST['form_helper/templates/text_field'] @basics4attr(attr, title, html_options)
 
   select: (attr, choices, html_options={}) ->
+    attrs = @basics4attr(attr, html_options)
+    attrs.choices = choices
+    JST['form_helper/templates/select'] attrs
 
   #
   #
@@ -37,10 +40,10 @@ class @FormHelper
     attr = attr.replace /_/g, ' '
     attr
 
-  basics4attr: (attr, title, options) ->
+  basics4attr: (attr, title, html_options) ->
     attrs =
       title: title
-      unfold_options: @unfold_options options
+      unfold_options: @unfold_options html_options
       field_id: @field_id(attr)
       field_name: @field_name(attr)
       value: @model.get attr

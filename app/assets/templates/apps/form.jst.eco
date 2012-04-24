@@ -18,9 +18,7 @@
 		<div class="control-group">
       <%- form.label 'app_type_id', 'App type', class: 'control-label' %>
 			<div class="controls">
-				<select class="text_field" id="app_app_type_id" name="app[app_type_id]">
-					<option value="1">Ruby on Rails</option>
-				</select>
+        <%- form.select 'app_type_id', [[1, 'Ruby on Rails'],[2, 'PHP']] %>
 			</div>
 		</div>
 

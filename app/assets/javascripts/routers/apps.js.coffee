@@ -12,4 +12,5 @@ class Crashdesk.Routers.Apps extends Backbone.Router
     $('#content').html( view.render().el )
 
   show: (id) ->
-    alert "App #{id}"
+    view = new Crashdesk.Views.AppsShow(model: @collection.get(id))
+    $('#content').html( view.render().el )

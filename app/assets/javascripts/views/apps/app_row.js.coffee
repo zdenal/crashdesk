@@ -6,6 +6,7 @@ class Crashdesk.Views.AppRow extends Backbone.View
   events:
     'click .destroy': 'destroy'
     'click .edit': 'edit'
+    'click .show': 'show'
 
   initialize: ->
     @model.on('destroy', @remove, this)
@@ -14,6 +15,10 @@ class Crashdesk.Views.AppRow extends Backbone.View
   render: ->
     $(@el).html(@template(app: @model))
     this
+
+  show: (event) ->
+    event.preventDefault()
+    Backbone.history.navigate "apps/#{@model.get('id')}", true
 
   destroy: (event) ->
     event.preventDefault()
