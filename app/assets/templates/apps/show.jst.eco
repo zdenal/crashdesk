@@ -1,8 +1,13 @@
 <div id="icons-bar" class="span1">
-  <span class="label label-info">ICON</span>
-  <span class="label label-info">ICON</span>
-  <span class="label label-info">ICON</span>
-  <span class="label label-info">ICON</span>
+  <a href="#" class="icon-48 home">&nbsp;</a>
+  <hr />
+  <a href="#" class="icon-48 comp">&nbsp;</a>
+  <a href="#" class="icon-48 users">&nbsp;</a>
+  <hr />
+  <a href="#" class="icon-48 zoom">&nbsp;</a>
+  <hr />
+  <a href="#" class="icon-48 cog">&nbsp;</a>
+  <hr />
 </div>
 <div id="errors" class="span3">
   <div class="error-preview">

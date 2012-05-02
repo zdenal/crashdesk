@@ -1,6 +1,6 @@
 <td><%= @app.get('id') %></td>
 <td>
-	<a hrer="#" class="show"><%= @app.get('name') %></a>
+	<a href="#" class="show"><%= @app.get('name') %></a>
 </td>
 <td><%= @app.get('created_at') %></td>
 <td>

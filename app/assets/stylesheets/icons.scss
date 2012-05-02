@@ -1,0 +1,27 @@
+$icons-48-black: sprite-map("icons-48/black/*.png");
+
+.icon-48 {
+  width: 48px;
+  height: 48px;
+
+  &.home {
+    background: sprite($icons-48-black, home_icon_48);
+  }
+
+  &.comp {
+    background: sprite($icons-48-black, comp_icon_48);
+  }
+
+  &.users {
+    background: sprite($icons-48-black, users_icon_48);
+  }
+
+  &.zoom {
+    background: sprite($icons-48-black, zoom_icon_48);
+  }
+
+  &.cog {
+    background: sprite($icons-48-black, cog_icon_48);
+  }
+
+}
