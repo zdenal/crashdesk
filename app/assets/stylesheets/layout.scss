@@ -1,3 +1,29 @@
+ul.tags {
+  list-style-type: none;
+  float: left;
+  margin-left: 10px;
+  width: 92%;
+
+  li {
+    float: left;
+    padding: 2px 15px;
+    margin-right: 1px;
+    font-weight: bold;
+    border: 2px solid $black;
+    @include box-shadow($gray 1px 1px 4px);
+
+    &:nth-child(2n) {
+      @include rotate(2deg);
+    }
+    &:nth-child(4n) {
+      @include rotate(-1deg);
+    }
+    &:nth-child(5n) {
+      @include rotate(-3deg);
+    }
+  }
+}
+
 #icons-bar {
   text-align: center;
 
@@ -43,15 +69,45 @@
 #error {
 
   .managment {
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $grayLighter;
+
+    i {
+      float: left;
+    }
 
     header {
       .badge {
-        font-size: 24px;
+        font-size: 18px;
       }
     }
+
+    div {
+      margin: 10px 0;
+      @include clearfix;
+    }
+
+    .tag_list {
+    }
+
+    .death_line {
+      input[type="text"] {
+        border: 2px solid $black;
+        margin-left: 10px;
+        float: left;
+        width: 130px;
+      }
+      .calendar {
+        margin-left: 3px;
+      }
+    }
+
   }
 
   .menu {
+    margin-top: 0px;
+
     a {
       margin-left: 20px;
       text-decoration: none;

@@ -6,8 +6,12 @@ $navbarBackground: #555;
 $navbarBackgroundHighlight: #888;
 $navbarText: #eee;
 $navbarLinkColor: #eee;
+$gray: #555;
+$grayDark: #333;
+$grayDarker: #222;
 $grayLight: #999;
 $grayLighter: #eee;
+$black: #000;
 
 @import "bootstrap";
 
@@ -21,4 +25,8 @@ body { padding-top: 60px; }
 
 .badge-important {
   background-color: #B94A48;
+}
+
+[class*="span"]{
+  margin-left: 25px;
 }
