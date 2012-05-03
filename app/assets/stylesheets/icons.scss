@@ -8,8 +8,8 @@ $icons-48-black: sprite-map("icons-48/black/*.png");
     background: sprite($icons-48-black, home_icon_48);
   }
 
-  &.comp {
-    background: sprite($icons-48-black, comp_icon_48);
+  &.delete_server {
+    background: sprite($icons-48-black, delete_server_icon_48);
   }
 
   &.users {
@@ -22,6 +22,34 @@ $icons-48-black: sprite-map("icons-48/black/*.png");
 
   &.cog {
     background: sprite($icons-48-black, cog_icon_48);
+  }
+
+  &.app_cross {
+    background: sprite($icons-48-black, app_window_cross_icon_48);
+  }
+
+  &.trash {
+    background: sprite($icons-48-black, trash_icon_48);
+  }
+
+  &.comment {
+    background: sprite($icons-48-black, comment_icon_48);
+  }
+
+  &.tag {
+    background: sprite($icons-48-black, tag_icon_48);
+  }
+
+  &.contact_card {
+    background: sprite($icons-48-black, contact_card_icon_48);
+  }
+
+  &.next {
+    background: sprite($icons-48-black, br_next_icon_48);
+  }
+
+  &.prev {
+    background: sprite($icons-48-black, br_prev_icon_48);
   }
 
 }

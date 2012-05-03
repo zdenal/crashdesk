@@ -1,49 +1,86 @@
-<div id="icons-bar" class="span1">
-  <a href="#" class="icon-48 home">&nbsp;</a>
+<section id="icons-bar" class="span1">
+  <a href="#" class="icon-48 home" title="home">&nbsp;</a>
   <hr />
-  <a href="#" class="icon-48 comp">&nbsp;</a>
-  <a href="#" class="icon-48 users">&nbsp;</a>
+  <a href="#" class="icon-48 app_cross" title="application errors">&nbsp;</a>
+  <a href="#" class="icon-48 delete_server" title="HW/hosting errors">&nbsp;</a>
+  <a href="#" class="icon-48 users" title="issues">&nbsp;</a>
   <hr />
   <a href="#" class="icon-48 zoom">&nbsp;</a>
   <hr />
   <a href="#" class="icon-48 cog">&nbsp;</a>
   <hr />
-</div>
-<div id="errors" class="span3">
-  <div class="error-preview">
+</section>
+
+
+<section id="errors" class="span3">
+  <article class="error-preview">
+    <header>
+      <h1>Error no.3232 Cannot find object with id</h1>
+      <span class="badge badge-info">3</span>
+    </header>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 ex ea commodo consequat.
-  </div>
-  <div class="error-preview">
+  </article>
+  <article class="error-preview">
+    <header>
+      <h1>Error no.3232 Cannot find object with id</h1>
+      <span class="badge badge-warning">13</span>
+    </header>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 ex ea commodo consequat.
-  </div>
-  <div class="error-preview">
+  </article>
+  <article class="error-preview">
+    <header>
+      <h1>Error no.3232 Cannot find object with id</h1>
+      <span class="badge badge-important">53</span>
+    </header>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 ex ea commodo consequat.
-  </div>
-  <div class="error-preview">
+  </article>
+  <article class="error-preview">
+    <header>
+      <h1>Error no.3232 Cannot find object with id</h1>
+      <span class="badge badge-inverse">999</span>
+    </header>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 ex ea commodo consequat.
-  </div>
-</div>
-<div id="error" class="span5">
+  </article>
+</section>
+
+
+<section id="error" class="span5">
   <div class="row">
-    <div class="page-header span5">
-      <h2>Icons <small>for manage error stuff</small></h2>
+    <div class="menu page-header span5">
+      <a href="#" class="icon-48 trash" title="trash">&nbsp;</a>
+      <a href="#" class="icon-48 comment" title="add comment">&nbsp;</a>
+      <a href="#" class="icon-48 tag" title="add tag">&nbsp;</a>
+      <a href="#" class="icon-48 contact_card" title="add responsible person">&nbsp;</a>
+      <a href="#" class="icon-48 next right-icon" title="next">&nbsp;</a>
+      <a href="#" class="icon-48 prev right-icon" title="prev">&nbsp;</a>
     </div>
   </div>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
-<div id="customers" class="span3">
+  <article>
+    <section class="managment">
+      <header>
+        <h2>
+          <span class="badge badge-inverse">999</span>
+          Error no. 2312 called method length on nil object
+        </h2>
+      </header>
+    </section>
+  </article>
+</section>
+
+
+<section id="customers" class="span3">
   <h2>Customers:</h2>
   <div class="customer-preview">
     <strong>Lorem Ipsum</strong>
@@ -61,4 +98,4 @@ ex ea commodo consequat.
     <strong>Lorem Ipsum</strong>
     <span class="badge badge-success"></span>
   </div>
-</div>
+</section>

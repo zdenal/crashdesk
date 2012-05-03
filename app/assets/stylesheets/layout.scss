@@ -1,7 +1,69 @@
 #icons-bar {
   text-align: center;
 
+  hr {
+    margin: 0 0 20px 0;
+  }
+
   a {
     text-decoration: none;
+    margin-bottom: 20px;
+  }
+}
+
+#errors {
+
+  .error-preview {
+
+    cursor: pointer;
+
+    header {
+      float: left;
+      border-bottom: 1px solid $grayLighter;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+
+      h1 {
+        font-size: 15px;
+        width: 85%;
+        float: left;
+        line-height: 1.2;
+      }
+
+      .badge {
+        float: right;
+      }
+
+    } /* header */
+
+  } /* error-preview */
+
+}
+
+#error {
+
+  .managment {
+
+    header {
+      .badge {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .menu {
+    a {
+      margin-left: 20px;
+      text-decoration: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .right-icon {
+      float: right;
+      margin-left: 5px;
+    }
   }
 }
