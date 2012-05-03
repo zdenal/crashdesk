@@ -1,5 +1,27 @@
-.error-preview {
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid $grayLight;
+#errors {
+  .error-preview {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid $gray;
+    cursor: pointer;
+
+    header {
+      float: left;
+      border-bottom: 1px solid $grayLighter;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+
+      h1 {
+        font-size: 15px;
+        width: 85%;
+        float: left;
+        line-height: 1.2;
+      }
+
+      .badge {
+        float: right;
+      }
+
+    } /* header */
+  }
 }
