@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree ../../../lib/assets/javascripts/form_helper
 //= require bootstrap
+//= require jquery.nanoscroller.min
 //= require underscore
 //= require backbone
 //= require crashdesk

@@ -40,6 +40,18 @@ ul.tags {
 
 #error {
 
+  .detail {
+
+    #backtrace {
+      height: 150px;
+      border: 2px solid $black;
+      .content {
+        padding: 5px;
+      }
+    }
+
+  }
+
   .managment {
     padding-bottom: 8px;
     margin-bottom: 15px;
