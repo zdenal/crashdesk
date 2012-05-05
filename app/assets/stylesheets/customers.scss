@@ -1,0 +1,44 @@
+#customers {
+
+  .page-header {
+    margin-top: 0;
+    padding-bottom: 7px;
+    h2 {
+      line-height: 25px;
+    }
+  }
+
+  .customer {
+    padding: 5px;
+
+    header {
+      i {
+        float: right;
+      }
+    }
+    .info {
+      fieldset {
+        margin-top: 10px;
+
+        legend {
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 1.5;
+        }
+
+        table {
+          th, td {
+            line-height: 1;
+          }
+        }
+      }
+      .chat {
+        text-align: center;
+      }
+      .contacts {
+        text-align: center;
+      }
+    }
+  }
+
+}

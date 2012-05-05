@@ -1,6 +1,20 @@
 $icons-48-black: sprite-map("icons-48/black/*.png");
 $icons-32-black: sprite-map("icons-32/black/*.png");
 $icons-24-black: sprite-map("icons-24/black/*.png");
+$icons-16-black: sprite-map("icons-16/black/*.png");
+
+.icon-16 {
+  width: 16px;
+  height: 16px;
+
+  &.not_connected {
+    background: sprite($icons-16-black, not_connected_icon_16);
+  }
+
+  &.checked {
+    background: sprite($icons-16-black, checkbox_checked_icon_16);
+  }
+}
 
 .icon-32 {
   width: 32px;
@@ -28,6 +42,18 @@ $icons-24-black: sprite-map("icons-24/black/*.png");
 
   &.prev {
     background: sprite($icons-32-black, br_prev_icon_32);
+  }
+
+  &.twitter {
+    background: sprite($icons-32-black, twitter_icon_32);
+  }
+
+  &.facebook {
+    background: sprite($icons-32-black, facebook_icon_32);
+  }
+
+  &.mail {
+    background: sprite($icons-32-black, mail_2_icon_32);
   }
 }
 
