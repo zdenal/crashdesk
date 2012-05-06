@@ -4,13 +4,16 @@ class Crashdesk.Routers.Apps extends Backbone.Router
     'apps/:id': 'show'
 
   initialize: ->
-    @collection = new Crashdesk.Collections.Apps()
-    @collection.fetch()
 
   index: ->
-    view = new Crashdesk.Views.AppsIndex(collection: @collection)
+    collection = new Crashdesk.Collections.Apps()
+    collection.fetch()
+    view = new Crashdesk.Views.AppsIndex(collection: collection)
     $('#content').html( view.render().el )
 
   show: (id) ->
-    view = new Crashdesk.Views.AppsShow(model: @collection.get(id))
-    $('#content').html( view.render().el )
+    app = new Crashdesk.Models.App id: id
+    app.fetch
+      success: ->
+        view = new Crashdesk.Views.AppsShow(model: app)
+        $('#content').html( view.render().el )

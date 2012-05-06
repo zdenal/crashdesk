@@ -1,0 +1,41 @@
+<div class="accordion-group customer">
+	<header>
+		<a class="accordion-togge" data-toggle="collapse" data-parent="#customers" href="#customer<%= @customer.cid %>">
+			<%= @customer.get('name') %>
+		</a>
+    <% if @customer.is_online(): %>
+      <i class="icon-16 checked" title="online" rel="tooltip"></i>
+    <% else: %>
+      <i class="icon-16 not_connected" title="offline" rel="tooltip"></i>
+    <% end %>
+	</header>
+	<div id="customer<%= @customer.cid %>" class="info collapse">
+		<fieldset>
+			<legend>Info</legend>
+			<table class="table">
+				<tr>
+					<th>gender:</th>
+					<td><%= @customer.get('gender') %></td>
+				</tr>
+				<tr>
+					<th>age:</th>
+					<td><%= @customer.get('age') %></td>
+				</tr>
+			</table>
+		</fieldset>
+		<h5>No of cases: <%= @customer.get('no_of_cases') %></h5>
+		<h5><a href="#">Comments: <%= @customer.get('comments') %></a></h5>
+		<br />
+    <% if @customer.is_online(): %>
+      <div class="chat">
+        <a href="#" class="btn btn-info">Start chat</a>
+      </div>
+      <br />
+    <% end %>
+		<div class="contacts">
+			<a href="#" class="icon-32 twitter" title="twitter" rel="tooltip"></a>
+			<a href="#" class="icon-32 facebook" title="facebook" rel="tooltip"></a>
+			<a href="#" class="icon-32 mail" title="email" rel="tooltip"></a>
+		</div>
+	</div><!--info -->
+</div><!-- customer -->

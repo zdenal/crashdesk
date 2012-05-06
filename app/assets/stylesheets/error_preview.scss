@@ -6,7 +6,7 @@
     cursor: pointer;
 
     header {
-      float: left;
+      @include clearfix;
       border-bottom: 1px solid $grayLighter;
       padding-bottom: 10px;
       margin-bottom: 10px;

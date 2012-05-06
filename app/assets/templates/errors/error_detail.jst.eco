@@ -1,0 +1,61 @@
+<div class="row">
+	<div class="menu page-header span6">
+		<a href="#" class="icon-32 trash" title="trash" rel="tooltip">&nbsp;</a>
+		<a href="#" class="icon-32 comment" title="add comment" rel="tooltip">&nbsp;</a>
+		<a href="#" class="icon-32 tag" title="add tag" rel="tooltip">&nbsp;</a>
+		<a href="#" class="icon-32 contact_card" title="add responsible person" rel="tooltip">&nbsp;</a>
+		<a href="#" class="icon-32 next right-icon" title="next" rel="tooltip">&nbsp;</a>
+		<a href="#" class="icon-32 prev right-icon" title="prev" rel="tooltip">&nbsp;</a>
+	</div>
+</div>
+<article>
+	<section class="managment">
+		<header>
+			<h3>
+				<span class="badge badge-<%= @error.css_warning_level() %>"><%= @error.get('no') %></span>
+				<%= @error.get('title') %>
+			</h3>
+		</header>
+		<div class="tag_list">
+			<i class="icon-24 tag" title="tags">&nbsp;</i>
+			<ul class="tags">
+				<% for tag in @error.get('tags'): %>
+					<li><%= tag %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="responsible_persons">
+			<i class="icon-24 user" title="responsible persons">&nbsp;</i>
+			<ul class="tags">
+				<% for person in @error.get('persons'): %>
+					<li><%= person %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="death_line">
+			<i class="icon-24 clock" title="death line">&nbsp;</i>
+			<input type="text" />
+			<i class="icon-24 calendar" title="choose death line">&nbsp;</i>
+		</div>
+	</section>
+	<section class="detail">
+		<header>
+			<h4>
+				<b>Error:</b> <%= @error.get('title') %>
+			</h4>
+		</header>
+		<br />
+		<h4>Backtrace:</h4>
+		<div id="backtrace" class="nano">
+			<div class="content">
+				<%= @error.get('backtrace') %>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				$('#backtrace').nanoScroller();
+			})
+		</script>
+	</section>
+</article>
+

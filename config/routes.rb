@@ -2,6 +2,7 @@ Crashdesk::Application.routes.draw do
 
   scope "api" do
     resources :apps
+    resources :errors
   end
 
   # The priority is based upon order of creation:

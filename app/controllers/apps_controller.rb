@@ -5,6 +5,7 @@ class AppsController < ApplicationController
   def index
     respond_with App.all
   end
+
   def show
     respond_with App.find params[:id]
   end

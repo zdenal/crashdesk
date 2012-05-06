@@ -25,6 +25,7 @@ end
 
 group :development, :test do
   gem 'debugger'
+  gem 'faker'
 end
 
 gem 'jquery-rails'
