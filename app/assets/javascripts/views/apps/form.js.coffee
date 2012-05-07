@@ -17,6 +17,7 @@ class Crashdesk.Views.AppsForm extends Backbone.View
 
   render: ->
     $(@el).html(@template(app: @model, errors: @errors))
+    $(@el).modal()
     this
 
   createOrUpdateApp: (event) ->

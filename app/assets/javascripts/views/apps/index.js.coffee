@@ -20,7 +20,6 @@ class Crashdesk.Views.AppsIndex extends Backbone.View
     app = new Crashdesk.Models.App()
     form = @collection.get_form app
     $(@el).append(form.render().el)
-    $(form.el).modal()
 
   appendApp: (app) =>
     app = new Crashdesk.Views.AppRow({ model: app, collection: @collection })

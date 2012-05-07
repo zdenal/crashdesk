@@ -28,4 +28,3 @@ class Crashdesk.Views.AppRow extends Backbone.View
     event.preventDefault()
     form = @collection.get_form @model
     $(@el).parent('table').after(form.render().el)
-    $(form.el).modal()

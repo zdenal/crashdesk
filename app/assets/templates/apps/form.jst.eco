@@ -3,7 +3,11 @@
 
 	<div class="modal-header">
 		<a class="close" data-dismiss="modal">×</a>
-		<h3>New App</h3>
+		<% if @app.isNew(): %>
+			<h3>New App</h3>
+		<% else: %>
+			<h3>Update App</h3>
+		<% end %>
 	</div>
 
 

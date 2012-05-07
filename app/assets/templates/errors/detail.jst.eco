@@ -2,8 +2,8 @@
 	<div class="menu page-header span6">
 		<a href="#" class="icon-32 trash" title="trash" rel="tooltip">&nbsp;</a>
 		<a href="#" class="icon-32 comment" title="add comment" rel="tooltip">&nbsp;</a>
-		<a href="#" class="icon-32 tag" title="add tag" rel="tooltip">&nbsp;</a>
-		<a href="#" class="icon-32 contact_card" title="add responsible person" rel="tooltip">&nbsp;</a>
+		<a href="#" id="tag_manager" class="icon-32 tag" title="add tag" rel="tooltip">&nbsp;</a>
+		<a href="#" id="person_manager" class="icon-32 contact_card" title="add responsible person" rel="tooltip">&nbsp;</a>
 		<a href="#" class="icon-32 next right-icon" title="next" rel="tooltip">&nbsp;</a>
 		<a href="#" class="icon-32 prev right-icon" title="prev" rel="tooltip">&nbsp;</a>
 	</div>
