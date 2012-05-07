@@ -14,6 +14,6 @@ class Crashdesk.Views.ShortError extends Backbone.View
   showErrorDetail: (e) ->
     e.preventDefault()
     error_detail = new Crashdesk.Views.ErrorDetail model: @model
-    console.log @model
     $('#error').html(error_detail.render().el)
+    console.log @model
     console.log @options.app.get('name')

@@ -1,0 +1,7 @@
+<div class="page-header">
+  <h2>Customers</h2>
+  <i class="icon-16 checked" title="online"></i> online &nbsp;|&nbsp;
+  <i class="icon-16 not_connected" title="offline"></i> offline
+</div>
+<div class="accordion">
+</div><!-- customers -->
