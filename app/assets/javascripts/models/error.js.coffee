@@ -8,6 +8,15 @@ class Crashdesk.Models.Error extends Backbone.Model
     new Crashdesk.Views.ErrorPersonManager
       model: @
 
+  is_selected: ->
+    @get('selected')
+
+  select: ->
+    @set 'selected', true
+
+  deselect: ->
+    @set 'selected', false
+
   css_warning_level: ->
     _no = @get('no')
     if _no < 10

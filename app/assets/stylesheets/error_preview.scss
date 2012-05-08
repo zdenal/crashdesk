@@ -5,6 +5,25 @@
     border: 2px solid $gray;
     cursor: pointer;
 
+    &.clickable:hover {
+      @include scale(1.03);
+    }
+
+    &.selected {
+      @include box-shadow(3px 3px 5px $gray);
+      @include scale(1.03);
+      background: $yellowLighter;
+    }
+
+    ul {
+      li {
+        padding-bottom: 5px;
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+
     header {
       @include clearfix;
       border-bottom: 1px solid $grayLighter;

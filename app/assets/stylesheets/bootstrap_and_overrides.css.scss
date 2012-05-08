@@ -1,7 +1,3 @@
-// Set the correct sprite paths
-$iconSpritePath: image-path('glyphicons-halflings.png');
-$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');
-
 $navbarBackground: #555;
 $navbarBackgroundHighlight: #888;
 $navbarText: #eee;
@@ -12,6 +8,7 @@ $grayDarker: #222;
 $grayLight: #999;
 $grayLighter: #eee;
 $black: #000;
+$yellowLighter: #FFFFB0;
 
 @import "bootstrap";
 

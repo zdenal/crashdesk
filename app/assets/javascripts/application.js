@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require jquery.nanoscroller.min
 //= require jquery.tagsinput
+//= require bootstrap-datepicker
 //= require underscore
 //= require backbone
 //= require crashdesk

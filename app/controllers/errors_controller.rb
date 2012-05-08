@@ -21,7 +21,8 @@ class ErrorsController < ApplicationController
   end
 
   def destroy
-    respond_with Error.destroy params[:id]
+    #respond_with Error.destroy params[:id]
+    respond_with status: :ok
   end
 
 end

@@ -3,6 +3,31 @@ $icons-32-black: sprite-map("icons-32/black/*.png");
 $icons-24-black: sprite-map("icons-24/black/*.png");
 $icons-16-black: sprite-map("icons-16/black/*.png");
 
+.disabled {
+  @include opacity(0.2);
+  cursor: cell !important;
+  &:hover {
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transform: none !important;
+  }
+}
+
+.icon-16, .icon-24, .icon-32, .icon-48 {
+  &.selected {
+  }
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:hover {
+    @include rotate(10deg);
+  }
+}
+
 .icon-16 {
   width: 16px;
   height: 16px;
@@ -13,6 +38,18 @@ $icons-16-black: sprite-map("icons-16/black/*.png");
 
   &.checked {
     background: sprite($icons-16-black, checkbox_checked_icon_16);
+  }
+
+  &.tag {
+    background: sprite($icons-16-black, tag_icon_16);
+  }
+
+  &.user {
+    background: sprite($icons-16-black, user_icon_16);
+  }
+
+  &.clock {
+    background: sprite($icons-16-black, clock_icon_16);
   }
 }
 

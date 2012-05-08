@@ -10,12 +10,9 @@ class Crashdesk.Views.AppsShow extends Backbone.View
 
   render: ->
     $(@el).html(@template())
-    @collection.each(@appendErrorToList)
+    error_list = new Crashdesk.Views.ErrorsList(collection: @collection)
+    this.$('#icons-bar').after(error_list.render().el)
     this
-
-  appendErrorToList: (error) =>
-    error = new Crashdesk.Views.ShortError({ model: error, app: @model })
-    this.$('#errors').append(error.render().el)
 
   getErrors: ->
     @collection = new Crashdesk.Collections.Errors()

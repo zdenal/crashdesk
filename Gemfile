@@ -21,6 +21,7 @@ group :assets do
 
   gem 'compass-rails'
   gem 'bootstrap-sass'
+  gem 'bootstrap-datepicker-rails'
 end
 
 group :development, :test do

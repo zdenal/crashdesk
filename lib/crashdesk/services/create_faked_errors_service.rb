@@ -3,24 +3,28 @@ module Crashdesk::Services
 
     def initialize
       @errors = []
+      id = 0
       10.times do
-        tags = []; persons = []; customers = []
+        tags = []; person = []; customers = []
         rand(1..4).times do
           tags << Faker::Lorem.words(1)
         end
         rand(1..2).times do
-          persons << Faker::Name.first_name
+          person << Faker::Name.first_name
         end
         rand(2..3).times do
           customers << generate_customer
         end
+        id += 1
         @errors << FakedError.new({
+          id: id,
           title: Faker::Lorem.sentence,
           no: rand(100),
           tags: tags,
-          persons: persons,
+          person: person,
           backtrace: Faker::Lorem.paragraphs(6).join,
-          customers: customers
+          customers: customers,
+          deadline: (Date.today + rand(30).days)
         })
       end
     end

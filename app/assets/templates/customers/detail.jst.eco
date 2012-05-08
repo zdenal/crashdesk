@@ -1,13 +1,13 @@
 <div class="accordion-group customer">
 	<header>
-		<a class="accordion-togge" data-toggle="collapse" data-parent="#customers" href="#customer<%= @customer.cid %>">
-			<%= @customer.get('name') %>
-		</a>
     <% if @customer.is_online(): %>
       <i class="icon-16 checked" title="online" rel="tooltip"></i>
     <% else: %>
       <i class="icon-16 not_connected" title="offline" rel="tooltip"></i>
     <% end %>
+		<a class="accordion-togge" data-toggle="collapse" data-parent="#customers" href="#customer<%= @customer.cid %>">
+			<%= @customer.get('name') %>
+		</a>
 	</header>
 	<div id="customer<%= @customer.cid %>" class="info collapse">
 		<fieldset>
