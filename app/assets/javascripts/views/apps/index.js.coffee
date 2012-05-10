@@ -1,5 +1,6 @@
 class Crashdesk.Views.AppsIndex extends Backbone.View
-  id: 'apps'
+  id        : 'apps'
+  className : 'row-fluid'
 
   template: JST['apps/index']
 

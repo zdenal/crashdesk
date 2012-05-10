@@ -1,5 +1,6 @@
 class Crashdesk.Views.AppsShow extends Backbone.View
-  id: 'app'
+  id        : 'app'
+  className : 'row-fluid'
 
   template: JST['apps/show']
 
