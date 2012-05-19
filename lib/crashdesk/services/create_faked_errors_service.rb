@@ -4,7 +4,7 @@ module Crashdesk::Services
     def initialize
       @errors = []
       id = 0
-      10.times do
+      15.times do
         tags = []; person = []; customers = []
         rand(1..4).times do
           tags << Faker::Lorem.words(1)
@@ -17,7 +17,7 @@ module Crashdesk::Services
         end
         id += 1
         @errors << FakedError.new({
-          id: id,
+          #id: id,
           title: Faker::Lorem.sentence,
           no: rand(100),
           tags: tags,

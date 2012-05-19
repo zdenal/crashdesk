@@ -20,6 +20,7 @@
 //= require underscore
 //= require backbone
 //= require crashdesk
+//= require endless_scroller
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

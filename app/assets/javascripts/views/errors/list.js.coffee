@@ -1,9 +1,10 @@
 class Crashdesk.Views.ErrorsList extends Backbone.View
   id        : 'errors'
-  tagName   : 'section'
-  className : 'span3'
 
   template: JST['shared/nothing']
+
+  initialize: ->
+    @collection.on 'add', @render, this
 
   render: ->
     $(@el).html(@template())

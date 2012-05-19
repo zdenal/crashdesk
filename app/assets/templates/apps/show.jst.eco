@@ -11,5 +11,8 @@
   <hr />
 </section>
 
+<section id="endless_list" class="span3">
+</section>
+
 <section id="error" class="span6">
 </section>

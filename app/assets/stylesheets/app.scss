@@ -1,0 +1,11 @@
+#app {
+  height: 95%;
+  width: 95%;
+  position: absolute;
+  overflow: hidden;
+
+  #endless_list {
+    overflow-y: auto;
+    height: 100%;
+  }
+}

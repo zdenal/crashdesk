@@ -12,7 +12,12 @@ class Crashdesk.Views.AppsShow extends Backbone.View
   render: ->
     $(@el).html(@template())
     error_list = new Crashdesk.Views.ErrorsList(collection: @collection)
-    this.$('#icons-bar').after(error_list.render().el)
+    this.$('#endless_list').html(error_list.render().el)
+    scroller = new EndlessScroller
+      window     : this.$('#endless_list')
+      list       : this.$('#endless_list #errors')
+      url        : 'api/errors'
+      collection : @collection
     this
 
   getErrors: ->

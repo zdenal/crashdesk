@@ -47,3 +47,4 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'backbone-on-rails'
+gem 'will_paginate'
