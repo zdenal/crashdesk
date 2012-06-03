@@ -27,7 +27,8 @@ class Crashdesk.Collections.Errors extends Backbone.Collection
     @at(@selectedIndex() - 1)
 
   selectNext: ->
-    @select(@next()) if @hasNext()
+    if @hasNext()
+      @select(@next())
 
   selectPrev: ->
     @select(@prev()) if @hasPrev()

@@ -1,9 +1,9 @@
 module Crashdesk::Services
   class CreateFakedErrorsService
+    @@id = 0
 
     def initialize
       @errors = []
-      id = 0
       15.times do
         tags = []; person = []; customers = []
         rand(1..4).times do
@@ -15,9 +15,9 @@ module Crashdesk::Services
         rand(2..3).times do
           customers << generate_customer
         end
-        id += 1
+        @@id += 1
         @errors << FakedError.new({
-          #id: id,
+          id: @@id,
           title: Faker::Lorem.sentence,
           no: rand(100),
           tags: tags,
@@ -34,7 +34,15 @@ module Crashdesk::Services
         error['table']
       end
     end
-    
+
+    def self.reset_id
+      @@id = 0
+    end
+
+    def self.id
+      @@id
+    end
+
     private
 
     def generate_customer

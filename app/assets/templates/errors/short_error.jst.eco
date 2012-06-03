@@ -1,8 +1,14 @@
 <header>
   <h1><%= @error.get('title') %></h1>
-  <span class="badge badge-<%= @error.css_warning_level() %>"><%= @error.get('no') %></span>
+  <span class="badge badge-<%= @error.css_warning_level() %>">
+    <%= @error.get('no') %>
+  </span>
 </header>
 <ul class="unstyled">
+  <li>
+    <b>id: </b>
+    <%= @error.get('id') %>
+  </li>
   <li>
     <i class="icon-16 tag" title="tags">&nbsp;</i>&nbsp;
     <%= @error.get('tags') %>

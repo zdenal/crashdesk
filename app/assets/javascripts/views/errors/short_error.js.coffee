@@ -36,5 +36,13 @@ class Crashdesk.Views.ShortError extends Backbone.View
     if @model.is_selected()
       $(@el).addClass 'selected'
       @showErrorDetail()
+      @setPositionInList()
     else
       $(@el).removeClass 'selected'
+
+  setPositionInList: ->
+    scrollPosition = this.$el.position().top
+    window_height = this.$el.parents('#endless_list').height()
+    move_to = ( scrollPosition - this.$el.parent().position().top )
+    if scrollPosition > ( window_height - 100) or scrollPosition < 100
+      this.$el.parents('#endless_list').scrollTop move_to

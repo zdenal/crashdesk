@@ -5,7 +5,13 @@ class ErrorsController < ApplicationController
   def index
     #respond_with Error.all
     #errors = Crashdesk::Services::CreateFakedErrorsService.new.execute
-    respond_with Crashdesk::Services::CreateFakedErrorsService.new.execute
+    Crashdesk::Services::CreateFakedErrorsService.reset_id if params[:page].blank?
+    if Crashdesk::Services::CreateFakedErrorsService.id > 40
+      errors = []
+    else
+      errors = Crashdesk::Services::CreateFakedErrorsService.new.execute
+    end
+    respond_with errors
   end
 
   def show
