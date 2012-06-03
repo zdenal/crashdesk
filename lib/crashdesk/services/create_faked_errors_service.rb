@@ -1,3 +1,5 @@
+require 'net/http'
+
 module Crashdesk::Services
   class CreateFakedErrorsService
     @@id = 0
@@ -30,9 +32,10 @@ module Crashdesk::Services
     end
 
     def execute
-      @errors.as_json.map do |error|
-        error['table']
-      end
+      #@errors.as_json.map do |error|
+        #error['table']
+      #end
+      @errors
     end
 
     def self.reset_id
@@ -58,6 +61,14 @@ module Crashdesk::Services
   end
 
   class FakedError < OpenStruct
+    def to_json
+      self.as_json['table']
+    end
+    def save
+      req = Net::HTTP::Put.new("/errors/#{self.id}.json")
+      req.body = to_json.to_s
+      Net::HTTP::start('127.0.0.1', 7474).request(req)
+    end
   end
 
 end

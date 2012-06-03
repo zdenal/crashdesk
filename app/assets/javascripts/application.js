@@ -19,6 +19,7 @@
 //= require bootstrap-datepicker
 //= require underscore
 //= require backbone
+//= require firehose
 //= require crashdesk
 //= require endless_scroller
 //= require_tree ../templates

@@ -14,6 +14,7 @@ class Crashdesk.Views.ShortError extends Backbone.View
 
   render: ->
     $(@el).html(@template(error: @model))
+    @connectByFirehose()
     this
 
   showEvent: (e) ->
@@ -46,3 +47,17 @@ class Crashdesk.Views.ShortError extends Backbone.View
     move_to = ( scrollPosition - this.$el.parent().position().top )
     if scrollPosition > ( window_height - 100) or scrollPosition < 100
       this.$el.parents('#endless_list').scrollTop move_to
+
+  connectByFirehose: ->
+    new Firehose.Consumer(
+      uri: "//localhost:7474/errors/#{@model.get('id')}.json"
+      error: =>
+        console.log "#{@model.get('id')} has got error"
+      disconnected: =>
+        console.log "#{@model.get('id')} disconnected via firehose"
+      connected: =>
+        console.log "#{@model.get('id')} connected via firehose"
+      message: (json) =>
+        console.log json
+        #@model.set json
+    ).connect()
