@@ -4,8 +4,6 @@ class ErrorsController < ApplicationController
   @@errors
 
   def index
-    #respond_with Error.all
-    #errors = Crashdesk::Services::CreateFakedErrorsService.new.execute
     @@errors ||= []
     if params[:page].blank?
       Crashdesk::Services::CreateFakedErrorsService.reset_id

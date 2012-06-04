@@ -66,7 +66,7 @@ module Crashdesk::Services
     end
     def save
       req = Net::HTTP::Put.new("/errors/#{self.id}.json")
-      req.body = to_json.to_s
+      req.body = ActiveSupport::JSON::Encoding.escape(to_json.to_json)
       Net::HTTP::start('127.0.0.1', 7474).request(req)
     end
   end

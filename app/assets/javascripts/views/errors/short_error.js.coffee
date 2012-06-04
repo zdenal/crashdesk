@@ -57,7 +57,8 @@ class Crashdesk.Views.ShortError extends Backbone.View
         console.log "#{@model.get('id')} disconnected via firehose"
       connected: =>
         console.log "#{@model.get('id')} connected via firehose"
-      message: (json) =>
-        console.log json
-        #@model.set json
+      message: (data) =>
+        console.log data
+        console.log "#{@model.get('id')} got message"
+        @model.set JSON.parse data
     ).connect()
