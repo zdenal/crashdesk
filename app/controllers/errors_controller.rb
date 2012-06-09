@@ -4,18 +4,23 @@ class ErrorsController < ApplicationController
   @@errors
 
   def index
-    @@errors ||= []
-    if params[:page].blank?
-      Crashdesk::Services::CreateFakedErrorsService.reset_id
-      @@errors = []
-    end
-    if Crashdesk::Services::CreateFakedErrorsService.id > 40
-      @@errors = []
-    else
-      errors = Crashdesk::Services::CreateFakedErrorsService.new.execute
-      @@errors = @@errors.concat errors
-    end
-    respond_with errors.map(&:to_json)
+    #respond_with Error.all
+    #errors = Crashdesk::Services::CreateFakedErrorsService.new.execute
+    #@@errors ||= []
+    #if params[:page].blank?
+      #Crashdesk::Services::CreateFakedErrorsService.reset_id
+      #@@errors = []
+    #end
+    #if Crashdesk::Services::CreateFakedErrorsService.id > 40
+      #@@errors = []
+    #else
+      #errors = Crashdesk::Services::CreateFakedErrorsService.new.execute
+      #@@errors = @@errors.concat errors
+    #end
+    #respond_with errors.map(&:to_json)
+    app_key = Bucket.first.name.to_sym
+    @errors = Error.find(:all, from: app_key)
+    respond_with @errors
   end
 
   def show
