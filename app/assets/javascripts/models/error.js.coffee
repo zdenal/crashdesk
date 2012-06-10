@@ -1,5 +1,13 @@
 class Crashdesk.Models.Error extends Backbone.Model
 
+  idAttribute: 'key'
+
+  customers: ->
+    if @get('error_info')?
+      _customers = info.extra.customer for info in @get('error_info')
+    else
+      []
+
   get_tag_manager: ->
     new Crashdesk.Views.ErrorTagManager
       model: @

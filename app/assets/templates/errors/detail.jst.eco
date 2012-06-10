@@ -1,5 +1,5 @@
-<div class="row">
-	<div class="menu page-header span6">
+<div>
+	<div class="menu page-header">
 		<a href="#" id="destroy" class="icon-32 trash clickable" title="trash" rel="tooltip">&nbsp;</a>
 		<a href="#" class="icon-32 comment clickable" title="add comment" rel="tooltip">&nbsp;</a>
 		<a href="#" id="tag_manager" class="icon-32 tag clickable" title="add tag" rel="tooltip">&nbsp;</a>
@@ -27,7 +27,7 @@
 		<div class="responsible_persons">
 			<i class="icon-24 user disabled" title="responsible persons">&nbsp;</i>
 			<ul class="tags">
-				<% for person in @error.get('person'): %>
+				<% for person in @error.get('persons'): %>
 					<li><%= person %></li>
 				<% end %>
 			</ul>

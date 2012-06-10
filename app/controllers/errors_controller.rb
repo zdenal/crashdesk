@@ -1,38 +1,24 @@
 class ErrorsController < ApplicationController
 
   respond_to :json, :html
-  @@errors
 
   def index
-    #respond_with Error.all
-    #errors = Crashdesk::Services::CreateFakedErrorsService.new.execute
-    #@@errors ||= []
-    #if params[:page].blank?
-      #Crashdesk::Services::CreateFakedErrorsService.reset_id
-      #@@errors = []
-    #end
-    #if Crashdesk::Services::CreateFakedErrorsService.id > 40
-      #@@errors = []
-    #else
-      #errors = Crashdesk::Services::CreateFakedErrorsService.new.execute
-      #@@errors = @@errors.concat errors
-    #end
-    #respond_with errors.map(&:to_json)
-    app_key = Bucket.first.name.to_sym
-    @errors = Error.find(:all, from: app_key)
+    session[:app_key] ||= Bucket.first.name
+    @errors = Error.find(:all, params: { app_key: session[:app_key] })
     respond_with @errors
   end
 
   def show
-    respond_with Error.find params[:id]
-  end
-
-  def create
-    respond_with Error.create params[:app]
+    @error = Error.find(params[:id], params: { app_key: session[:app_key] })
+    respond_with @error.as_json
   end
 
   def update
-    respond_with Error.update params[:id], params[:app]
+    @error = Error.find(params[:id], params: { app_key: session[:app_key] })
+    #@error.update_attributes params[:error]
+    @error.update_attribute 'title', 'a'
+    respond_with status: :ok
+    #respond_with Error.update params[:id], params[:app]
   end
 
   def destroy

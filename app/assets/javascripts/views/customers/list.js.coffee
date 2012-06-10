@@ -6,7 +6,7 @@ class Crashdesk.Views.CustomerList extends Backbone.View
   template: JST['customers/list']
 
   initialize: ->
-    @customers = @model.get('customers')
+    @customers = @model.customers()
     @model.on 'destroy', @remove, this
 
   render: ->

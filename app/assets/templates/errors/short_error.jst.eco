@@ -6,16 +6,12 @@
 </header>
 <ul class="unstyled">
   <li>
-    <b>id: </b>
-    <%= @error.get('id') %>
-  </li>
-  <li>
     <i class="icon-16 tag" title="tags">&nbsp;</i>&nbsp;
     <%= @error.get('tags') %>
   </li>
   <li>
     <i class="icon-16 user" title="responsible person">&nbsp;</i>&nbsp;
-    <%= @error.get('person') %>
+    <%= @error.get('persons') %>
   </li>
   <li>
     <i class="icon-16 clock" title="deadline">&nbsp;</i>&nbsp;
