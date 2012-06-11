@@ -13,6 +13,5 @@ class Crashdesk.Views.ErrorTagManager extends Crashdesk.Views.SharedTagManager
     this
 
   updateErrorTags: =>
-    @model.save
-      tags: @serialize().tags.split(','),
+    @model.save tags: @serialize().tags.split(','),
       wait: true
