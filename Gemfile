@@ -6,7 +6,11 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'jquery-rails'
+gem 'firehose'
+gem 'yajl-ruby', :require => "yajl"
+gem 'rabl'
+gem "mongoid", "~> 3.0.0.rc"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,9 +32,6 @@ group :development, :test do
   gem 'debugger'
   gem 'faker'
 end
-
-gem 'jquery-rails'
-gem 'firehose'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

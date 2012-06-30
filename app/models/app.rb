@@ -1,7 +1,14 @@
-class App < ActiveRecord::Base
-   attr_accessible :name, :app_type_id
+class App
+  include Mongoid::Document
 
-   validates :name, :presence => true
+  # Main properties
+  field :name
+  field :app_type_id, type: Integer
 
-   default_scope :order => 'created_at DESC'
+  # Relations
+  has_many :errors
+
+  # Validations
+  validates :name, presence: true
+
 end
