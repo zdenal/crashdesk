@@ -7,7 +7,7 @@ class AppsController < ApplicationController
   end
 
   def show
-    respond_with App.find params[:id]
+    respond_with App.find_by(uuid: params[:id])
   end
 
   def create
