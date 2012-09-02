@@ -14,8 +14,4 @@ class App
 
   before_create :generate_uuid
 
-  def generate_uuid
-    self.uuid = UUID.generate
-  end
-
 end

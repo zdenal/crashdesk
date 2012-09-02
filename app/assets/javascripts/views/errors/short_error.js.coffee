@@ -14,7 +14,7 @@ class Crashdesk.Views.ShortError extends Backbone.View
 
   render: ->
     $(@el).html(@template(error: @model))
-    #@connectByFirehose()
+    @connectByFirehose()
     this
 
   showEvent: (e) ->
@@ -52,15 +52,15 @@ class Crashdesk.Views.ShortError extends Backbone.View
 
   connectByFirehose: ->
     new Firehose.Consumer(
-      uri: "//localhost:7474/errors/#{@model.get('id')}.json"
+      uri: "//localhost:7474/errors/#{@model.id}"
       error: =>
-        console.log "#{@model.get('id')} has got error"
+        console.log "#{@model.id} has got error"
       disconnected: =>
-        console.log "#{@model.get('id')} disconnected via firehose"
+        console.log "#{@model.id} disconnected via firehose"
       connected: =>
-        console.log "#{@model.get('id')} connected via firehose"
+        console.log "#{@model.id} connected via firehose"
       message: (data) =>
         console.log data
-        console.log "#{@model.get('id')} got message"
-        @model.set JSON.parse data
+        console.log "#{@model.id} got message"
+        @model.set data
     ).connect()

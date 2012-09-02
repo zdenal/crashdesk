@@ -11,7 +11,6 @@ gem 'firehose'
 gem 'yajl-ruby', :require => "yajl"
 gem 'rabl'
 gem "mongoid", "~> 3.0.0.rc"
-gem 'uuid'
 
 # Gems used only for assets and not required
 # in production environments by default.

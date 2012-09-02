@@ -6,11 +6,12 @@ class Crashdesk.Views.ErrorPersonManager extends Crashdesk.Views.SharedTagManage
   render: ->
     $(@el).html @template
       title: 'Responsible persons'
-      tags: @model.get('person')
+      tags: @model.get('persons')
     $(@el).modal().on 'shown', =>
       this.$('#tags').tagsInput()
     .on 'hide', @updateErrorPersons
     this
 
   updateErrorPersons: =>
-    @model.set 'person', @serialize().tags.split(',')
+    @model.save 'persons', @serialize().tags.split(','),
+      wait: true

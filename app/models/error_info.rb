@@ -2,7 +2,9 @@ class ErrorInfo
   include Mongoid::Document
 
   # Error info - exception name, class, backtrace
-  field :info, type: Hash
+  field :backtrace, type: Hash
+  field :occured_at, type: DateTime
+  field :exception_class
 
   # Environment - ruby version, os ...
   field :env, type: Hash

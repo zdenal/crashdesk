@@ -19,16 +19,20 @@
 		<div class="tag_list">
 			<i class="icon-24 tag disabled" title="tags">&nbsp;</i>
 			<ul class="tags">
-				<% for tag in @error.get('tags'): %>
-					<li><%= tag %></li>
+        <% if @error.get('tags'): %>
+          <% for tag in @error.get('tags'): %>
+            <li><%= tag %></li>
+          <% end %>
 				<% end %>
 			</ul>
 		</div>
 		<div class="responsible_persons">
 			<i class="icon-24 user disabled" title="responsible persons">&nbsp;</i>
 			<ul class="tags">
-				<% for person in @error.get('persons'): %>
-					<li><%= person %></li>
+        <% if @error.get('persons'): %>
+          <% for person in @error.get('persons'): %>
+            <li><%= person %></li>
+          <% end %>
 				<% end %>
 			</ul>
 		</div>
@@ -44,11 +48,17 @@
 				<b>Error:</b> <%= @error.get('title') %>
 			</h4>
 		</header>
+    <label>Occured at: </label><%= @error.get('error_info')[0].occured_at %><br />
+    <label>Env: </label>
+    <% for key, value of @error.get('error_info')[0].env: %>
+      <%= key %>: <%= value %><br />
+    <% end %>
 		<br />
 		<h4>Backtrace:</h4>
 		<div id="backtrace" class="nano">
 			<div class="content">
-				<%= @error.get('backtrace') %>
+				<%= console.log @error %>
+				<%= @error.get('error_info')[0].backtrace %>
 			</div>
 		</div>
 	</section>

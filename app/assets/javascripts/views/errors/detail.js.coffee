@@ -32,7 +32,7 @@ class Crashdesk.Views.ErrorDetail extends Backbone.View
     $(@el).append(person_manager.render().el)
 
   updateDeadline: (event) =>
-    @model.set 'deadline', @$('#deadline input').val()
+    @model.save 'deadline', @$('#deadline input').val()
 
   nextError: (event) ->
     event.preventDefault()

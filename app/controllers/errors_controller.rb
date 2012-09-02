@@ -3,8 +3,7 @@ class ErrorsController < ApplicationController
   respond_to :json, :html
 
   def index
-    #Crashdesk::Services::CreateFakedErrorsService.new.fill_db
-    @errors = App.last.errors
+    @errors = App.find_by(id: params[:app_key]).errors
     respond_with @errors
   end
 
@@ -13,10 +12,13 @@ class ErrorsController < ApplicationController
     respond_with @error.as_json
   end
 
+  def create
+    Services::ProcessError.new(params[:error]).run
+  end
+
   def update
     @error = Error.find(params[:id])
-    @error.load params[:error]
-    @error.prefix_options = {app_id: session[:app_id]}
+    @error.attributes = params[:error]
     @error.save
     respond_with status: :ok
   end

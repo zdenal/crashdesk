@@ -1,9 +1,9 @@
 class Crashdesk.Models.Error extends Backbone.Model
 
-  idAttribute: 'key'
+  idAttribute: '_id'
 
   customers: ->
-    if @get('error_info')?
+    if @get('error_info')? and false
       _customers = info.extra.customer for info in @get('error_info')
     else
       []

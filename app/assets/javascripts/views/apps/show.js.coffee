@@ -20,4 +20,6 @@ class Crashdesk.Views.AppsShow extends Backbone.View
 
   getErrors: ->
     @collection = new Crashdesk.Collections.Errors()
-    @collection.fetch()
+    @collection.fetch
+      data:
+        app_key: @model.id
