@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree ../../../lib/assets/javascripts/form_helper
 //= require bootstrap
 //= require jquery.nanoscroller.min

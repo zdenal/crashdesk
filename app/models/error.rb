@@ -3,8 +3,9 @@ class Error
 
   # Main properties
   field :crc
-  field :hash
+  field :hash_id
   field :title
+  field :backtrace, type: Hash
 
   # Our properties for managing error
   field :no, type: Integer

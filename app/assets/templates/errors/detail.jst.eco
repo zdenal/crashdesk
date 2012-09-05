@@ -57,8 +57,7 @@
 		<h4>Backtrace:</h4>
 		<div id="backtrace" class="nano">
 			<div class="content">
-				<%= console.log @error %>
-				<%= @error.get('error_info')[0].backtrace %>
+				<%= @error.get('backtrace') %>
 			</div>
 		</div>
 	</section>

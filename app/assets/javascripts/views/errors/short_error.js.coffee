@@ -50,6 +50,9 @@ class Crashdesk.Views.ShortError extends Backbone.View
     if scrollPosition > ( window_height - 100) or scrollPosition < 100
       this.$el.parents('#endless_list').scrollTop move_to
 
+  highlight: ->
+    $(@el).effect('highlight', {}, 2000)
+
   connectByFirehose: ->
     new Firehose.Consumer(
       uri: "//localhost:7474/errors/#{@model.id}"
@@ -60,7 +63,7 @@ class Crashdesk.Views.ShortError extends Backbone.View
       connected: =>
         console.log "#{@model.id} connected via firehose"
       message: (data) =>
-        console.log data
         console.log "#{@model.id} got message"
         @model.set data
+        @highlight()
     ).connect()
