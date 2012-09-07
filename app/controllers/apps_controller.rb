@@ -15,7 +15,7 @@ class AppsController < ApplicationController
   end
 
   def update
-    respond_with App.update params[:id], params[:app]
+    respond_with App.find(params[:id]).update_attributes(params[:app])
   end
 
   def destroy
