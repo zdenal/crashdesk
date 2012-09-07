@@ -23,8 +23,12 @@ class Crashdesk.Views.AppRow extends Backbone.View
 
   destroy: (event) ->
     event.preventDefault()
-    @model.destroy
-      wait: true
+    conf = new Confirm()
+    conf.notify().on 'click:yes', =>
+      @model.destroy
+        wait: true
+        success: ->
+          conf.destroyAll()
 
   edit: (event) ->
     event.preventDefault()
