@@ -4,6 +4,7 @@
 </td>
 <td><%= @app.get('created_at') %></td>
 <td>
+  <a href= "#" class='code btn btn-mini' >Code</a>
 	<a href= "#" class='edit btn btn-mini' >Edit</a>
 	<a href="#" class="destroy btn btn-mini btn-danger">
 		Destroy

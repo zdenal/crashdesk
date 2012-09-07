@@ -5,6 +5,7 @@ class App
   field :name
   field :app_type_id, type: Integer
   field :uuid
+  field :created_at, type: Time, default: ->{ Time.now }
 
   # Relations
   has_many :errors
@@ -13,5 +14,9 @@ class App
   validates :name, presence: true
 
   before_create :generate_uuid
+
+  def generate_uuid
+    self.uuid = UUID.generate
+  end
 
 end

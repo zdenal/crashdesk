@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h3>Rails code</h3>
+</div>
+<div class="modal-body">
+  <p>Put this code into initialize (eg. config/initializers/crashdesk.rb)</p>
+  <pre>
+    ActiveSupport.on_load(:action_controller) do |crashdesk|
+      crashdesk.api_key: 'fds6fs6dff8d6s'
+      crashdesk.app_key: '<%= @app.get('uuid') %>'
+    end
+  </pre>
+</div>
+<div class="modal-footer">
+  <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</a>
+</div>

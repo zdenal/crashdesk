@@ -19,7 +19,7 @@ class AppsController < ApplicationController
   end
 
   def destroy
-    respond_with App.destroy params[:id]
+    respond_with App.find(params[:id]).destroy
   end
 
 end

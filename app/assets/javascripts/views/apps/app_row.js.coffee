@@ -7,6 +7,7 @@ class Crashdesk.Views.AppRow extends Backbone.View
     'click .destroy': 'destroy'
     'click .edit': 'edit'
     'click .show': 'show'
+    'click .code': 'code'
 
   initialize: ->
     @model.on('destroy', @remove, this)
@@ -22,9 +23,15 @@ class Crashdesk.Views.AppRow extends Backbone.View
 
   destroy: (event) ->
     event.preventDefault()
-    @model.destroy()
+    @model.destroy
+      wait: true
 
   edit: (event) ->
     event.preventDefault()
     form = @collection.get_form @model
     $(@el).parent('table').after(form.render().el)
+
+  code: (event) ->
+    event.preventDefault()
+    code = @model.get_code @model
+    $(@el).parent('table').after(code.render().el)
