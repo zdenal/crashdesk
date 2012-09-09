@@ -1,4 +1,4 @@
-class ErrorsController < ApplicationController
+class Api::ErrorsController < ApplicationController
 
   respond_to :json, :html
 

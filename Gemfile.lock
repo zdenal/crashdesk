@@ -35,6 +35,7 @@ GEM
       ejs (~> 1.0.0)
       jquery-rails
       railties (>= 3.1)
+    bcrypt-ruby (3.0.1)
     bootstrap-datepicker-rails (0.6.17)
       railties (>= 3.0)
     bootstrap-sass (2.1.0.0)
@@ -63,6 +64,11 @@ GEM
     debugger-linecache (1.1.2)
       debugger-ruby_core_source (>= 1.1.1)
     debugger-ruby_core_source (1.1.3)
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
     eco (1.0.0)
       coffee-script
       eco-source
@@ -99,15 +105,19 @@ GEM
       thor
       websocket-rack
     fssm (0.2.9)
+    hashie (1.2.0)
     hike (1.2.1)
     hiredis (0.4.5)
     http_parser.rb (0.5.3)
+    httpauth (0.1)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.1.2)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.7.5)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
     macaddr (1.6.1)
       systemu (~> 2.5.0)
     mail (2.4.4)
@@ -123,7 +133,33 @@ GEM
     moped (1.2.1)
     multi_json (1.3.6)
     multipart-post (1.1.5)
+    oauth (0.4.7)
+    oauth2 (0.8.0)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.0.3)
+      hashie (~> 1.2)
+      rack
+    omniauth-facebook (1.4.1)
+      omniauth-oauth2 (~> 1.1.0)
+    omniauth-github (1.0.3)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-google (1.0.1)
+      multi_json
+      omniauth (~> 1.0.0)
+      omniauth-oauth
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.1.0)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
     origin (1.0.8)
+    orm_adapter (0.4.0)
     polyglot (0.3.3)
     rabl (0.7.1)
       activesupport (>= 2.3.14)
@@ -179,6 +215,8 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     uuid (2.3.5)
       macaddr (~> 1.0)
+    warden (1.2.1)
+      rack (>= 1.0)
     websocket-rack (0.4.0)
       em-websocket (~> 0.3.6)
       eventmachine (~> 1.0.0.beta.4)
@@ -197,10 +235,14 @@ DEPENDENCIES
   coffee-rails
   compass-rails
   debugger
+  devise
   faker
   firehose
   jquery-rails
   mongoid (~> 3.0.0.rc)
+  omniauth-facebook
+  omniauth-github
+  omniauth-google
   rabl
   rails (= 3.2.3)
   sass-rails (~> 3.2.3)

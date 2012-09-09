@@ -1,0 +1,26 @@
+<div class="hero-unit">
+  <h1>Try Crashdesk now</h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <p>
+    <a href="#signin" role="button" class="btn btn-primary btn-large" data-toggle="modal">Launch Crashde.sk</a>
+  </p>
+</div>
+
+<div class="modal hide fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Sign in</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:github) %>&nbsp;|&nbsp;
+      <%= link_to "Developer", user_omniauth_authorize_path(:developer) %>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>

@@ -1,9 +1,16 @@
 Crashdesk::Application.routes.draw do
 
-  scope "api" do
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+  namespace "api" do
     resources :apps
     resources :errors
   end
+
+  resources :apps
+
+  match 'access/:id' => 'catalog#view'
+  match '/signout' => 'access#signout', :as => :signout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -54,7 +61,7 @@ Crashdesk::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'main#index'
+   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -15,6 +15,6 @@ class Error
 
   # Relations
   embeds_many :error_info
-  belongs_to :app
+  has_and_belongs_to_many :app
 
 end

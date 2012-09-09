@@ -19,7 +19,7 @@ class Crashdesk.Views.AppRow extends Backbone.View
 
   show: (event) ->
     event.preventDefault()
-    Backbone.history.navigate "apps/#{@model.get('_id')}", true
+    Backbone.history.navigate "#{@model.id}/errors", true
 
   destroy: (event) ->
     event.preventDefault()

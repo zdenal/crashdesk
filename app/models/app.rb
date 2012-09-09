@@ -9,6 +9,7 @@ class App
 
   # Relations
   has_many :errors
+  has_and_belongs_to_many :user
 
   # Validations
   validates :name, presence: true

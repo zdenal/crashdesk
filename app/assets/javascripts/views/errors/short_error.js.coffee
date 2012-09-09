@@ -53,6 +53,7 @@ class Crashdesk.Views.ShortError extends Backbone.View
   highlight: ->
     $(@el).effect('highlight', {}, 2000)
 
+  # Move this into model
   connectByFirehose: ->
     new Firehose.Consumer(
       uri: "//localhost:7474/errors/#{@model.id}"

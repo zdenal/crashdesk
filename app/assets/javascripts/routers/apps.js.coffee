@@ -1,7 +1,7 @@
 class Crashdesk.Routers.Apps extends Backbone.Router
   routes:
     '': 'index'
-    'apps/:id': 'show'
+    ':id/errors': 'show'
 
   initialize: ->
 
@@ -12,7 +12,7 @@ class Crashdesk.Routers.Apps extends Backbone.Router
     $('#content').html( view.render().el )
 
   show: (id) ->
-    app = new Crashdesk.Models.App id: id
+    app = new Crashdesk.Models.App _id: id
     app.fetch
       success: ->
         view = new Crashdesk.Views.AppsShow(model: app)
