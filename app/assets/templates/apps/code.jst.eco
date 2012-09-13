@@ -5,9 +5,8 @@
 <div class="modal-body">
   <p>Put this code into initialize (eg. config/initializers/crashdesk.rb)</p>
   <pre>
-    ActiveSupport.on_load(:action_controller) do |crashdesk|
-      crashdesk.api_key: 'fds6fs6dff8d6s'
-      crashdesk.app_key: '<%= @app.get('uuid') %>'
+    Crashdesk.configure do |config|
+      config.app_key = '5051d6b946c7ebe23e000002'
     end
   </pre>
 </div>
