@@ -18,7 +18,6 @@ set :repository, "git@github.com:zdenal/crashdesk.git"
 set :repository_cache, "git_cache"
 set :deploy_via, :remote_cache
 set :ssh_options, { :forward_agent => true, :port => 1499 }
-set :application, 'crashdesk'
 set :deploy_to, "/mnt/app/#{application}"
 
 set :rvm_ruby_string, '1.9.3-p194@crashdesk'
