@@ -8,8 +8,6 @@ class User
   field :provider
   field :uid
 
-  validates_presence_of :email
-
   ## Rememberable
   field :remember_created_at, :type => Time
 
