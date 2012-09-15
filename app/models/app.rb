@@ -13,6 +13,4 @@ class App
   # Validations
   validates :name, presence: true
 
-  before_create :generate_uuid
-
 end
