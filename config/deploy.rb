@@ -45,6 +45,16 @@ ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
 
 namespace :deploy do
 
+  desc "restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails."
+    task t, :roles => :app do ; end
+  end
+
   namespace :assets do
     desc "deploy the precompiled assets"
     task :precompile, :roles => :app, :except => { :no_release => true } do
