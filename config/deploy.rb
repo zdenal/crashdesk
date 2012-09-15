@@ -1,6 +1,5 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-require 'resque_utils/capistrano'
 
 set :scm, :subversion
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -43,3 +42,4 @@ ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+before 'deploy:setup', 'rvm:install_ruby'

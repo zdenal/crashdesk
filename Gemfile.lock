@@ -201,6 +201,8 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -255,6 +257,7 @@ DEPENDENCIES
   omniauth-google
   rabl
   rails (= 3.2.3)
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

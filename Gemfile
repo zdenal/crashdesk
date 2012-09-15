@@ -16,6 +16,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-google'
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 # Gems used only for assets and not required
 # in production environments by default.
