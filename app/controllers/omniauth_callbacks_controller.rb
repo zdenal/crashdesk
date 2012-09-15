@@ -12,5 +12,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   end
   alias_method :developer, :all
+  alias_method :github, :all
 
 end

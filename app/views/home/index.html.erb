@@ -16,7 +16,7 @@
   </div>
   <div class="modal-body">
     <p>
-      <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:github) %>&nbsp;|&nbsp;
+      <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>&nbsp;|&nbsp;
       <% if Rails.env.development? %>
         <%= link_to "Developer", user_omniauth_authorize_path(:developer) %>
       <% end %>
