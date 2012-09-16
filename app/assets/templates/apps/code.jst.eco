@@ -6,7 +6,7 @@
   <p>Put this code into initialize (eg. config/initializers/crashdesk.rb)</p>
   <pre>
     Crashdesk.configure do |config|
-      config.app_key = '5051d6b946c7ebe23e000002'
+      config.app_key = '<%= @app.id %>'
     end
   </pre>
 </div>
