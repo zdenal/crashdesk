@@ -1,11 +1,21 @@
+
+body {
+  padding-top: 0px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
 #app {
-  height: 95%;
-  width: 95%;
   position: absolute;
   overflow: hidden;
+  height: 100%;
 
   #endless_list {
     overflow-y: auto;
     height: 100%;
+    margin-left: 0;
+    border-right: 2px solid #ccc;
   }
 }

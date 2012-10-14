@@ -11,24 +11,17 @@ ul.tags {
     font-weight: bold;
     border: 2px solid $black;
     @include box-shadow($gray 1px 1px 4px);
-
-    &:nth-child(2n) {
-      @include rotate(2deg);
-    }
-    &:nth-child(4n) {
-      @include rotate(-1deg);
-    }
-    &:nth-child(5n) {
-      @include rotate(-3deg);
-    }
   }
 }
 
 #icons-bar {
   text-align: center;
+  background: #505a5c;
+  height: 100%;
 
   hr {
     margin: 0 0 20px 0;
+    border: none;
   }
 
   a {

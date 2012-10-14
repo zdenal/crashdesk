@@ -1,64 +1,51 @@
-<div>
-	<div class="menu page-header">
-		<a href="#" id="destroy" class="icon-32 trash clickable" title="trash" rel="tooltip">&nbsp;</a>
-		<a href="#" class="icon-32 comment clickable" title="add comment" rel="tooltip">&nbsp;</a>
-		<a href="#" id="tag_manager" class="icon-32 tag clickable" title="add tag" rel="tooltip">&nbsp;</a>
-		<a href="#" id="person_manager" class="icon-32 contact_card clickable" title="add responsible person" rel="tooltip">&nbsp;</a>
-		<a href="#" id="next_error" class="icon-32 next right-icon clickable <%= 'disabled' unless @has_next %>" title="next" rel="tooltip">&nbsp;</a>
-		<a href="#" id="prev_error" class="icon-32 prev right-icon clickable <%= 'disabled' unless @has_prev %>" title="prev" rel="tooltip">&nbsp;</a>
-	</div>
-</div>
 <article>
-	<section class="managment">
-		<header>
-			<h3>
-				<span class="badge badge-<%= @error.css_warning_level() %>"><%= @error.get('no') %></span>
-				<%= @error.get('title') %>
-			</h3>
-		</header>
-		<div class="tag_list">
-			<i class="icon-24 tag disabled" title="tags">&nbsp;</i>
-			<ul class="tags">
+  <section class="managment">
+    <header>
+      <h3>
+        <span class="badge badge-<%= @error.css_warning_level() %>"><%= @error.get('no') %></span>
+        <%= @error.get('title') %>
+      </h3>
+    </header>
+    <div class="tag_list">
+      <i class="icon-24 tag disabled" title="tags">&nbsp;</i>
+      <ul class="tags">
         <% if @error.get('tags'): %>
           <% for tag in @error.get('tags'): %>
             <li><%= tag %></li>
           <% end %>
-				<% end %>
-			</ul>
-		</div>
-		<div class="responsible_persons">
-			<i class="icon-24 user disabled" title="responsible persons">&nbsp;</i>
-			<ul class="tags">
-        <% if @error.get('persons'): %>
-          <% for person in @error.get('persons'): %>
-            <li><%= person %></li>
-          <% end %>
-				<% end %>
-			</ul>
-		</div>
-		<div id="deadline" class="deadline date" data-date-format="yyyy-mm-dd" data-date="<%= @error.get('deadline') %>">
-			<i class="icon-24 clock disabled" title="deadline">&nbsp;</i>
-			<input name="deadline" type="text" value="<%= @error.get('deadline') %>" readonly />
-			<span class="add-on"><i class="icon-24 calendar clickable" title="choose deadline">&nbsp;</i></span>
-		</div>
-	</section>
-	<section class="detail">
-		<header>
-			<h4>
-				<b>Error:</b> <%= @error.get('title') %>
-			</h4>
-		</header>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+
+  <section class="detail">
+    <h4>Backtrace:</h4>
+    <div id="backtrace" class="nano">
+      <div class="content">
+        <%= @error.get('backtrace') %>
+      </div>
+     </div>
+    <header>
+      <h4>
+        <b>Error:</b> <%= @error.get('title') %>
+      </h4>
+    </header>
     <label>Occured at: </label><%= @error.get('error_info')[0].occured_at %><br />
     <label>Env: </label>
     <% for key, value of @error.get('error_info')[0].env: %>
       <%= key %>: <%= value %><br />
     <% end %>
-		<br />
-		<h4>Backtrace:</h4>
-		<div id="backtrace" class="nano">
-			<div class="content">
-				<%= @error.get('backtrace') %>
-			</div>
-		</div>
-	</section>
+    <br />
+  </section>
+
+  <div>
+    <div class="menu page-header">
+      <a href="#" id="destroy" class="icon-32 trash clickable" title="trash" rel="tooltip">&nbsp;</a>
+      <a href="#" class="icon-32 comment clickable" title="add comment" rel="tooltip">&nbsp;</a>
+      <a href="#" id="tag_manager" class="icon-32 tag clickable" title="add tag" rel="tooltip">&nbsp;</a>
+      <a href="#" id="person_manager" class="icon-32 contact_card clickable" title="add responsible person" rel="tooltip">&nbsp;</a>
+      <a href="#" id="next_error" class="icon-32 next right-icon clickable <%= 'disabled' unless @has_next %>" title="next" rel="tooltip">&nbsp;</a>
+      <a href="#" id="prev_error" class="icon-32 prev right-icon clickable <%= 'disabled' unless @has_prev %>" title="prev" rel="tooltip">&nbsp;</a>
+    </div>
+  </div>
 </article>

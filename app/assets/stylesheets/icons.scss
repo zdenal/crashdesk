@@ -3,6 +3,11 @@ $icons-32-black: sprite-map("icons-32/black/*.png");
 $icons-24-black: sprite-map("icons-24/black/*.png");
 $icons-16-black: sprite-map("icons-16/black/*.png");
 
+$icons-48-white: sprite-map("icons-48/white/*.png");
+$icons-32-white: sprite-map("icons-32/white/*.png");
+$icons-24-white: sprite-map("icons-24/white/*.png");
+$icons-16-white: sprite-map("icons-16/white/*.png");
+
 .disabled {
   @include opacity(0.2);
   cursor: cell !important;
@@ -22,10 +27,6 @@ $icons-16-black: sprite-map("icons-16/black/*.png");
 
 .clickable {
   cursor: pointer;
-
-  &:hover {
-    @include rotate(10deg);
-  }
 }
 
 .icon-16 {
@@ -59,10 +60,6 @@ $icons-16-black: sprite-map("icons-16/black/*.png");
 
   &.trash {
     background: sprite($icons-32-black, trash_icon_32);
-  }
-
-  &.comment {
-    background: sprite($icons-32-black, comment_icon_32);
   }
 
   &.tag {
@@ -120,51 +117,47 @@ $icons-16-black: sprite-map("icons-16/black/*.png");
   height: 48px;
 
   &.home {
-    background: sprite($icons-48-black, home_icon_48);
+    background: sprite($icons-48-white, home_icon_48);
   }
 
   &.delete_server {
-    background: sprite($icons-48-black, delete_server_icon_48);
+    background: sprite($icons-48-white, delete_server_icon_48);
   }
 
   &.users {
-    background: sprite($icons-48-black, users_icon_48);
+    background: sprite($icons-48-white, users_icon_48);
   }
 
   &.zoom {
-    background: sprite($icons-48-black, zoom_icon_48);
+    background: sprite($icons-48-white, zoom_icon_48);
   }
 
   &.cog {
-    background: sprite($icons-48-black, cog_icon_48);
+    background: sprite($icons-48-white, cog_icon_48);
   }
 
   &.app_cross {
-    background: sprite($icons-48-black, app_window_cross_icon_48);
+    background: sprite($icons-48-white, app_window_cross_icon_48);
   }
 
   &.trash {
-    background: sprite($icons-48-black, trash_icon_48);
-  }
-
-  &.comment {
-    background: sprite($icons-48-black, comment_icon_48);
+    background: sprite($icons-48-white, trash_icon_48);
   }
 
   &.tag {
-    background: sprite($icons-48-black, tag_icon_48);
+    background: sprite($icons-48-white, tag_icon_48);
   }
 
   &.contact_card {
-    background: sprite($icons-48-black, contact_card_icon_48);
+    background: sprite($icons-48-white, contact_card_icon_48);
   }
 
   &.next {
-    background: sprite($icons-48-black, br_next_icon_48);
+    background: sprite($icons-48-white, br_next_icon_48);
   }
 
   &.prev {
-    background: sprite($icons-48-black, br_prev_icon_48);
+    background: sprite($icons-48-white, br_prev_icon_48);
   }
 
 }

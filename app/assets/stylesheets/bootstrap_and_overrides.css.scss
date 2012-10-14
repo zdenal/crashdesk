@@ -8,26 +8,15 @@ $grayDarker: #222;
 $grayLight: #999;
 $grayLighter: #eee;
 $black: #000;
-$yellowLighter: #FFFFB0;
+$yellowLighter: #fffedb;
 
 @import "bootstrap";
-
-body { padding-top: 60px; }
-
 @import "bootstrap-responsive";
 
 .tooltip {
   z-index: 1040;
 }
 
-.navbar .brand {
-  color: #FAFFB8;
-}
-
 .badge-important {
   background-color: #B94A48;
-}
-
-[class*="span"]{
-  margin-left: 25px;
 }
