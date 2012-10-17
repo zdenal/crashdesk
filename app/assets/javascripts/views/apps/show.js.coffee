@@ -5,14 +5,18 @@ class Crashdesk.Views.AppsShow extends Backbone.View
   template: JST['apps/show']
 
   initialize: ->
+    @apps = @options.apps
     @getErrors()
     @model.on('reset', @render, this)
     @collection.on('reset', @render, this)
 
   render: ->
-    $(@el).html(@template())
-    error_list = new Crashdesk.Views.ErrorsList(collection: @collection)
-    this.$('#endless_list').html(error_list.render().el)
+    $(@el).html @template
+      apps: @apps
+      app: @model
+    error_list = new Crashdesk.Views.ErrorsList
+      collection : @collection
+    this.$('#endless_list #error_list').html(error_list.render().el)
     scroller = new EndlessScroller @collection,
       window     : this.$('#endless_list')
       list       : this.$('#endless_list #errors')

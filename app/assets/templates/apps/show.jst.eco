@@ -12,6 +12,13 @@
 </section>
 
 <section id="endless_list" class="span3">
+ <div class="sidebar-fixed-top span3">
+    <div class="navbar-inner">
+      <%- render_partial 'apps/app_selectbox', apps: @apps, app: @app %>
+    </div>
+  </div>
+  <div id="error_list">
+  </div>
 </section>
 
 <section id="error" class="span6">

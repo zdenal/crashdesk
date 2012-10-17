@@ -7,6 +7,12 @@ body {
   padding: 0;
 }
 
+.sidebar-fixed-top {
+  position: fixed;
+  z-index: 1030;
+  margin-bottom: 0;
+}
+
 #app {
   position: absolute;
   overflow: hidden;
@@ -17,5 +23,9 @@ body {
     height: 100%;
     margin-left: 0;
     border-right: 2px solid #ccc;
+
+    #error_list {
+      margin-top: 13%;
+    }
   }
 }

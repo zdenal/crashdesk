@@ -1,0 +1,13 @@
+<select id="app_selectbox">
+	<% for app in @apps.models: %>
+		<option value="<%= app.id %>" <%= 'selected' if app.id is @app.id %>><%= app.get('name') %></option>
+	<% end %>
+</select>
+<script type="text/javascript" charset="utf-8">
+	$(function(){
+		$('#app_selectbox').on('change', function(e){
+			e.preventDefault()
+			Backbone.history.navigate($(this).val()+"/errors", true)
+		})
+	})
+</script>
