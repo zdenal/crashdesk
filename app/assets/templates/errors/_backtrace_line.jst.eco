@@ -1,0 +1,10 @@
+<div>
+  <a href="#"><%- @line.file %>:<%- @line.number %> `<%- @line.method %>'</a>
+  <pre class="prettyprint hide">
+    <code>
+<%= @line.source_pre_lines.join('\n') %>
+<%= @line.number %>: <span class="nocode" style="background: #333; color: #fff;"><b><%= @line.source_line %></b></span>
+<%= @line.source_post_lines.join('\n') %>
+    </code>
+  </pre>
+</div>

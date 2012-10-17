@@ -22,9 +22,22 @@
     <h4>Backtrace:</h4>
     <div id="backtrace" class="nano">
       <div class="content">
-        <%= @error.get('backtrace') %>
+        <% for line in @error.get('backtrace'): %>
+          <%- render_partial 'errors/backtrace_line', line: line %>
+        <% end %>
       </div>
-     </div>
+    </div>
+    <script>
+      $(function() {
+        _.defer(function(){
+          $('#backtrace a').on('click', function(e) {
+            e.preventDefault()
+            $(this).parent().find('pre').toggle()
+          })
+          prettyPrint()
+        })// end defer
+      })
+    </script>
     <header>
       <h4>
         <b>Error:</b> <%= @error.get('title') %>

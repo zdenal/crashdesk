@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require_tree ../../../lib/assets/javascripts/form_helper
 //= require bootstrap
+//= require partial_helper
 //= require jquery.nanoscroller.min
 //= require jquery.tagsinput
 //= require bootstrap-datepicker
@@ -24,6 +25,7 @@
 //= require firehose
 //= require crashdesk
 //= require endless_scroller
+//= require prettify
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./lib
