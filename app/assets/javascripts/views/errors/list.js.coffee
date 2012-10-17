@@ -5,11 +5,15 @@ class Crashdesk.Views.ErrorsList extends Backbone.View
 
   initialize: ->
     @collection.on 'add', @appendErrorToList, this
+    @collection.on 'reset', @selectFirst, this
 
   render: ->
     $(@el).html(@template())
     @collection.each(@appendErrorToList)
     this
+
+  selectFirst: ->
+    @collection.select(@collection.first()) if @collection.first()
 
   appendErrorToList: (error, collection, options) =>
     # TODO event 'add' is called twice. Do deeply research
