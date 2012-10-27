@@ -14,6 +14,7 @@ class Crashdesk.Views.ShortError extends Backbone.View
 
   render: ->
     $(@el).html(@template(error: @model))
+    $("time.timeago").timeago()
     @connectByFirehose()
     this
 
@@ -28,7 +29,6 @@ class Crashdesk.Views.ShortError extends Backbone.View
           model: @model,
           collection: @collection
         $('#error').html(error_detail.render().el)
-        @showCustomers()
 
   showCustomers: ->
     list = new Crashdesk.Views.CustomerList(model: @model)

@@ -1,10 +1,20 @@
 <article>
   <section class="managment">
     <header>
-      <h3>
-        <span class="badge badge-<%= @error.css_warning_level() %>"><%= @error.get('no') %></span>
-        <%= @error.get('title') %>
-      </h3>
+      <div class="brief">
+        <h3>
+          <span class="badge badge-<%= @error.css_warning_level() %>"><%= @error.get('no') %></span>
+          <%= @error.get('title') %>
+        </h3>
+        <p>
+          Last occurence <time class="timeago" datetime="<%= @error.get('error_info')[0].occured_at %>"><%= @error.get('error_info')[0].occured_at %></time> first <time class="timeago" datetime="<%= @error.get('error_info')[0].occured_at %>"><%= @error.get('error_info')[0].occured_at %></time>
+        </p>
+      </div>
+
+      <div class="refs">
+        <h3>#<%= @error.get('crc') %></h3>
+        <em><%= @error.get('hash_id') %></em>
+      </div>
     </header>
     <div class="tag_list">
       <i class="icon-24 tag disabled" title="tags">&nbsp;</i>
@@ -19,46 +29,46 @@
   </section>
 
   <section class="detail">
-    <h4>Backtrace:</h4>
-    <div id="backtrace" class="nano">
+    <div id="backtrace">
+      <h4>Backtrace: <span>(<a id="backtrace_all" href="#">Show all</a>)</span></h4>
       <div class="content">
+        <%- render_partial 'errors/backtrace_line', line: @error.get('backtrace')[0], hide: false %>
+      </div>
+      <div class="rest hide">
         <% for line in @error.get('backtrace'): %>
-          <%- render_partial 'errors/backtrace_line', line: line %>
+          <%- render_partial 'errors/backtrace_line', line: line, hide: true %>
         <% end %>
       </div>
     </div>
+
     <script>
       $(function() {
         _.defer(function(){
-          $('#backtrace a').on('click', function(e) {
+          $('#backtrace_all').click(function(e) {
+            e.preventDefault()
+            $("#backtrace .rest").toggle()
+          })
+          $('#backtrace .rest a').on('click', function(e) {
             e.preventDefault()
             $(this).parent().find('pre').toggle()
           })
           prettyPrint()
+          $(".managment time.timeago").timeago()
         })// end defer
       })
     </script>
-    <header>
-      <h4>
-        <b>Error:</b> <%= @error.get('title') %>
-      </h4>
-    </header>
-    <label>Occured at: </label><%= @error.get('error_info')[0].occured_at %><br />
-    <label>Env: </label>
-    <% for key, value of @error.get('error_info')[0].env: %>
-      <%= key %>: <%= value %><br />
-    <% end %>
-    <br />
+
+
+    <div id="context">
+      <h4>Context:</h4>
+      <div>
+        <label>Occured at: </label><%= @error.get('error_info')[0].occured_at %><br />
+        <label>Env: </label>
+        <% for key, value of @error.get('error_info')[0].env: %>
+          <%= key %>: <%= value %><br />
+        <% end %>
+      </div>
+    </div>
   </section>
 
-  <div>
-    <div class="menu page-header">
-      <a href="#" id="destroy" class="icon-32 trash clickable" title="trash" rel="tooltip">&nbsp;</a>
-      <a href="#" class="icon-32 comment clickable" title="add comment" rel="tooltip">&nbsp;</a>
-      <a href="#" id="tag_manager" class="icon-32 tag clickable" title="add tag" rel="tooltip">&nbsp;</a>
-      <a href="#" id="person_manager" class="icon-32 contact_card clickable" title="add responsible person" rel="tooltip">&nbsp;</a>
-      <a href="#" id="next_error" class="icon-32 next right-icon clickable <%= 'disabled' unless @has_next %>" title="next" rel="tooltip">&nbsp;</a>
-      <a href="#" id="prev_error" class="icon-32 prev right-icon clickable <%= 'disabled' unless @has_prev %>" title="prev" rel="tooltip">&nbsp;</a>
-    </div>
-  </div>
 </article>

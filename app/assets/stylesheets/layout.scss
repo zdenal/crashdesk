@@ -22,6 +22,15 @@ ul.tags {
   text-align: center;
   background: #505a5c;
   height: 100%;
+  max-width: 80px;
+
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  width: 80px;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   hr {
     margin: 0 0 20px 0;
@@ -32,4 +41,43 @@ ul.tags {
     text-decoration: none;
     margin-bottom: 20px;
   }
+}
+
+#endless_list {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  height: 100%;
+  width: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #444;
+
+  #error_list {
+    margin-top: 13%;
+  }
+
+  .sidebar-fixed-top {
+    width: 300px;
+    border-bottom: 1px solid #97A9B6;
+    background-color: #D1D8E2;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5px;
+    select {
+      width: 270px;
+    }
+  }
+}
+
+#error {
+  overflow-y: auto;
+  position: absolute;
+  bottom: 0;
+  left: 381px;
+  right: 0;
+  top: 0;
+  height: 100%;
+  min-width: 600px;
+  overflow: auto;
 }

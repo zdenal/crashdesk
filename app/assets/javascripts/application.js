@@ -18,6 +18,7 @@
 //= require partial_helper
 //= require jquery.nanoscroller.min
 //= require jquery.tagsinput
+//= require jquery.timeago
 //= require bootstrap-datepicker
 //= require underscore
 //= require backbone

@@ -1,20 +1,12 @@
 <header>
-  <h1><%= @error.get('title') %></h1>
-  <span class="badge badge-<%= @error.css_warning_level() %>">
-    <%= @error.get('no') %>
-  </span>
+  <div class="title">
+    <h1><%= @error.get('title') %></h1>
+    <span class="badge badge-<%= @error.css_warning_level() %>">
+      <%= @error.get('no') %>
+    </span>
+  </div>
+  <div class="summary">
+    <em>#<%= @error.get('crc') %></em><br>
+    <time class="timeago" datetime="<%= @error.get('error_info')[0].occured_at %>"><%= @error.get('error_info')[0].occured_at %></time>
+  </div>
 </header>
-<ul class="unstyled">
-  <li>
-    <i class="icon-16 tag" title="tags">&nbsp;</i>&nbsp;
-    <%= @error.get('tags') %>
-  </li>
-  <li>
-    <i class="icon-16 user" title="responsible person">&nbsp;</i>&nbsp;
-    <%= @error.get('persons') %>
-  </li>
-  <li>
-    <i class="icon-16 clock" title="deadline">&nbsp;</i>&nbsp;
-    <%= @error.get('deadline') %>
-  </li>
-</ul>

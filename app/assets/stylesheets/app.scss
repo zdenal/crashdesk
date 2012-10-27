@@ -17,15 +17,5 @@ body {
   position: absolute;
   overflow: hidden;
   height: 100%;
-
-  #endless_list {
-    overflow-y: auto;
-    height: 100%;
-    margin-left: 0;
-    border-right: 2px solid #ccc;
-
-    #error_list {
-      margin-top: 13%;
-    }
-  }
 }
+
