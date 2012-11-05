@@ -55,16 +55,16 @@ class Crashdesk.Views.ShortError extends Backbone.View
 
   # Move this into model
   connectByFirehose: ->
-    new Firehose.Consumer(
-      uri: "//localhost:7474/errors/#{@model.id}"
-      error: =>
-        console.log "#{@model.id} has got error"
-      disconnected: =>
-        console.log "#{@model.id} disconnected via firehose"
-      connected: =>
-        console.log "#{@model.id} connected via firehose"
-      message: (data) =>
-        console.log "#{@model.id} got message"
-        @model.set data
-        @highlight()
-    ).connect()
+    #new Firehose.Consumer(
+      #uri: "//localhost:7474/errors/#{@model.id}"
+      #error: =>
+        #console.log "#{@model.id} has got error"
+      #disconnected: =>
+        #console.log "#{@model.id} disconnected via firehose"
+      #connected: =>
+        #console.log "#{@model.id} connected via firehose"
+      #message: (data) =>
+        #console.log "#{@model.id} got message"
+        #@model.set data
+        #@highlight()
+    #).connect()

@@ -1,0 +1,5 @@
+<select <%- @unfold_options %> id="<%= @field_id %>" name="<%= @field_name %>">
+  <% for option in @values: %>
+    <option data="<%= @value %>" <%= "selected" if @value is option[0] %> value="<%= option[0] %>"><%= option[1] %></option>
+  <% end %>
+</select>

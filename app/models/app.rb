@@ -7,7 +7,7 @@ class App
   field :created_at, type: Time, default: ->{ Time.now }
 
   # Relations
-  has_many :errors
+  embeds_many :error_info
   has_and_belongs_to_many :user
 
   # Validations

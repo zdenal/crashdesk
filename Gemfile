@@ -17,6 +17,8 @@ gem 'omniauth-github'
 gem 'omniauth-google'
 gem 'capistrano'
 gem 'rvm-capistrano'
+#gem 'backbone_form_helper', path: '~/Projects/backbone_form_helper'
+gem 'backbone_form_helper', git: 'git@github.com:zdenal/backbone_form_helper.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -3,7 +3,7 @@ class Api::ErrorsController < ApplicationController
   respond_to :json, :html
 
   def index
-    @errors = App.find_by(id: params[:app_key]).errors
+    @errors = App.find_by(id: params[:app_key]).error_info
     respond_with @errors
   end
 

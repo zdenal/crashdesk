@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:zdenal/backbone_form_helper.git
+  revision: 533fbe0f917dcb5a4661e2d4b73d6e8b00e8963f
+  specs:
+    backbone_form_helper (0.0.1.1.alpha)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -241,6 +247,7 @@ PLATFORMS
 
 DEPENDENCIES
   backbone-on-rails
+  backbone_form_helper!
   bootstrap-datepicker-rails
   bootstrap-sass
   capistrano

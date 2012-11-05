@@ -1,23 +1,20 @@
 class ErrorInfo
   include Mongoid::Document
 
-  # Error info - exception name, class, backtrace
-  field :occured_at, type: DateTime
-  field :exception_class
+  # Main properties
+  field :crc
+  field :hash_id
+  field :title
+  field :backtrace, type: Hash
 
-  # Environment - ruby version, os ...
-  field :env, type: Hash
-
-  # Context - request stuff: session, cookies, params ..
-  field :context, type: Hash
-
-  # Extra - screenshot, customer email hash, some id of customer
-  field :extra, type: Hash
+  # Our properties for managing error
+  field :no, type: Integer
+  field :tags, type: Array
+  field :persons, type: Array
+  field :deadline, type: Date
 
   # Relations
-  embedded_in :error
-  # many :addresses
-  # many :friends, :class_name => "Person"
-  # one :account
-end
+  embeds_many :error_details
+  embedded_in :app
 
+end

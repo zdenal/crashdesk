@@ -1,0 +1,15 @@
+<div class="input-append date datepicker" data-date="<%= @value %>" data-date-format="dd-mm-yyyy">
+    <input id="<%= @field_id %>" name="<%= @field_name %>"
+      size="16" type="text" value="<%= @value %>" <%- @unfold_options %>>
+    <span class="add-on"><i class="icon-th"></i></span>
+</div>
+<span class="help-inline">
+  <%= @errors if @errors %>
+</span>
+<script>
+  $(function(){
+    $('.datepicker input').datepicker({
+      autoclose: true
+    })
+  })
+</script>

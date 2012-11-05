@@ -5,27 +5,24 @@ class Crashdesk.Views.AppsIndex extends Backbone.View
   template: JST['apps/index']
 
   events:
-    'click #new_app': 'newApp'
+    'submit form': 'newApp'
+
+  serialize: ->
+    name        : this.$('#app_name').val()
 
   initialize: ->
-    @collection.on('reset', @render, this)
-    @collection.on('add', @prependApp, this)
+    @app = new Crashdesk.Models.App()
 
   render: ->
-    $(@el).html(@template(apps: @collection))
-    @collection.each(@appendApp)
+    $(@el).html(@template(app: @app))
     this
 
   newApp: (event) ->
     event.preventDefault()
-    app = new Crashdesk.Models.App()
-    form = @collection.get_form app
-    $(@el).append(form.render().el)
-
-  appendApp: (app) =>
-    app = new Crashdesk.Views.AppRow({ model: app, collection: @collection })
-    this.$('#apps_list').append(app.render().el)
-
-  prependApp: (app) =>
-    app = new Crashdesk.Views.AppRow({ model: app, collection: @collection })
-    this.$('#apps_list').prepend(app.render().el)
+    @app.save @serialize(),
+      wait: true
+      success: =>
+        Backbone.history.navigate("#{@app.id}/errors", true)
+      error: (model, response) =>
+        @app.set("errors", $.parseJSON(response.responseText).errors)
+        @render()

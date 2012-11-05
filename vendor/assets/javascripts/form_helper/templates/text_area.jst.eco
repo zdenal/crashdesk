@@ -1,0 +1,5 @@
+<textarea id="<%= @field_id %>" <%- @unfold_options %>
+  name="<%= @field_name %>"><%= @value %></textarea>
+<span class="help-inline">
+  <%= @errors if @errors %>
+</span>
