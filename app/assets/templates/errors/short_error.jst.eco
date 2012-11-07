@@ -7,6 +7,5 @@
   </div>
   <div class="summary">
     <em>#<%= @error.get('crc') %></em><br>
-    <time class="timeago" datetime="<%= @error.get('error_info')[0].occured_at %>"><%= @error.get('error_info')[0].occured_at %></time>
   </div>
 </header>

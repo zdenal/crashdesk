@@ -7,7 +7,7 @@
           <%= @error.get('title') %>
         </h3>
         <p>
-          Last occurence <time class="timeago" datetime="<%= @error.get('error_info')[0].occured_at %>"><%= @error.get('error_info')[0].occured_at %></time> first <time class="timeago" datetime="<%= @error.get('error_info')[0].occured_at %>"><%= @error.get('error_info')[0].occured_at %></time>
+          Last occurence <time class="timeago" datetime="<%= @error.get('error_details')[0].occured_at %>"><%= @error.get('error_details')[0].occured_at %></time> first <time class="timeago" datetime="<%= @error.get('error_details')[0].occured_at %>"><%= @error.get('error_details')[0].occured_at %></time>
         </p>
       </div>
 
