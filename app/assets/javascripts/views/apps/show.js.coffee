@@ -16,6 +16,7 @@ class Crashdesk.Views.AppsShow extends Backbone.View
       app: @model
     error_list = new Crashdesk.Views.ErrorsList
       collection : @collection
+      app        : @model
     this.$('#endless_list #error_list').html(error_list.render().el)
     scroller = new EndlessScroller @collection,
       window     : this.$('#endless_list')
@@ -26,4 +27,4 @@ class Crashdesk.Views.AppsShow extends Backbone.View
     @collection = new Crashdesk.Collections.Errors()
     @collection.fetch
       data:
-        app_key: @model.id
+        app_id: @model.id

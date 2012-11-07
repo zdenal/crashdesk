@@ -12,6 +12,7 @@ class Crashdesk.Views.AppsIndex extends Backbone.View
 
   initialize: ->
     @app = new Crashdesk.Models.App()
+    @app.on('change:errors', @render, this)
 
   render: ->
     $(@el).html(@template(app: @app))
@@ -25,4 +26,3 @@ class Crashdesk.Views.AppsIndex extends Backbone.View
         Backbone.history.navigate("#{@app.id}/errors", true)
       error: (model, response) =>
         @app.set("errors", $.parseJSON(response.responseText).errors)
-        @render()

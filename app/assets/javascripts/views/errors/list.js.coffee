@@ -4,6 +4,7 @@ class Crashdesk.Views.ErrorsList extends Backbone.View
   template: JST['shared/nothing']
 
   initialize: ->
+    @app = @options.app
     @collection.on 'add', @appendErrorToList, this
     @collection.on 'reset', @selectFirst, this
 
@@ -13,7 +14,12 @@ class Crashdesk.Views.ErrorsList extends Backbone.View
     this
 
   selectFirst: ->
-    @collection.select(@collection.first()) if @collection.first()
+    if @collection.first()
+      @collection.select(@collection.first())
+    else
+      $('#error').html JST['apps/code']
+        app: @app
+      $('#endless_list').append JST['errors/no_error_message']()
 
   appendErrorToList: (error, collection, options) =>
     # TODO event 'add' is called twice. Do deeply research

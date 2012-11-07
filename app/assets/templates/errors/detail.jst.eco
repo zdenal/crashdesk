@@ -58,13 +58,12 @@
       })
     </script>
 
-
     <div id="context">
       <h4>Context:</h4>
       <div>
-        <label>Occured at: </label><%= @error.get('error_info')[0].occured_at %><br />
+        <label>Occured at: </label><%= @error.get('error_details')[0].occured_at %><br />
         <label>Env: </label>
-        <% for key, value of @error.get('error_info')[0].env: %>
+        <% for key, value of @error.get('error_details')[0].env: %>
           <%= key %>: <%= value %><br />
         <% end %>
       </div>

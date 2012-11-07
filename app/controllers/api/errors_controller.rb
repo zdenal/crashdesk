@@ -1,15 +1,14 @@
 class Api::ErrorsController < ApplicationController
 
   respond_to :json, :html
+  before_filter :get_app
 
   def index
-    @errors = App.find_by(id: params[:app_key]).error_info
-    respond_with @errors
+    @errors = @app.error_info
   end
 
   def show
-    @error = Error.find(params[:id])
-    respond_with @error.as_json
+    @error = @app.error_info.find(params[:id])
   end
 
   def create
@@ -26,6 +25,12 @@ class Api::ErrorsController < ApplicationController
   def destroy
     respond_with Error.destroy params[:id]
     respond_with status: :ok
+  end
+
+  private
+
+  def get_app
+    @app = App.find_by(id: params[:app_id])
   end
 
 end

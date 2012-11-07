@@ -3,15 +3,20 @@ class Api::AppsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with current_user.apps.all
+    @apps = current_user.apps.all
   end
 
   def show
-    respond_with current_user.apps.find(params[:id])
+    @app = current_user.apps.find(params[:id])
   end
 
   def create
-    respond_with current_user.apps.create params[:app]
+    @app = current_user.apps.build params[:app]
+    if @app.save
+      render :show
+    else
+      respond_with @app, status: :unprocessable_entity
+    end
   end
 
   def update

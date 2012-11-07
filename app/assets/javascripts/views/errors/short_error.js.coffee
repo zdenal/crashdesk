@@ -24,6 +24,8 @@ class Crashdesk.Views.ShortError extends Backbone.View
 
   showErrorDetail: ->
     @model.fetch
+      data:
+        app_id: @model.get('app_id')
       success: =>
         error_detail = new Crashdesk.Views.ErrorDetail
           model: @model,
