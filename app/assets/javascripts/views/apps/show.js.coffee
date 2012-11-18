@@ -4,11 +4,16 @@ class Crashdesk.Views.AppsShow extends Backbone.View
 
   template: JST['apps/show']
 
+  events:
+    'click #settings': 'showSettings'
+
   initialize: ->
     @apps = @options.apps
     @getErrors()
     @model.on('reset', @render, this)
     @collection.on('reset', @render, this)
+    @settings = new Crashdesk.Views.AppsSettings
+      model: @model
 
   render: ->
     $(@el).html @template
@@ -22,6 +27,10 @@ class Crashdesk.Views.AppsShow extends Backbone.View
       window     : this.$('#endless_list')
       list       : this.$('#endless_list #errors')
     this
+
+  showSettings: (e) ->
+    e.preventDefault()
+    @settings.render().el
 
   getErrors: ->
     @collection = new Crashdesk.Collections.Errors()

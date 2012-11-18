@@ -7,7 +7,7 @@
   <hr />
   <a href="#" class="icon-48 zoom clickable">&nbsp;</a>
   <hr />
-  <a href="/signout" class="icon-48 cog clickable">&nbsp;</a>
+  <a id="settings" href="/signout" class="icon-48 cog clickable">&nbsp;</a>
   <hr />
 </section>
 
