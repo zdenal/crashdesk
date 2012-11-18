@@ -18,13 +18,14 @@ gem 'omniauth-google'
 gem 'capistrano'
 gem 'rvm-capistrano'
 #gem 'backbone_form_helper', path: '~/Projects/backbone_form_helper'
-gem 'backbone_form_helper', git: 'git@github.com:zdenal/backbone_form_helper.git'
+#gem 'backbone_form_helper', git: 'git@github.com:zdenal/backbone_form_helper.git'
+gem 'backbone_form_helper'
 gem 'jbuilder'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
