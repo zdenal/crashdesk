@@ -160,4 +160,8 @@ $icons-16-white: sprite-map("icons-16/white/*.png");
     background: sprite($icons-48-white, br_prev_icon_48);
   }
 
+  &.plus {
+    background: sprite($icons-48-white, round_plus_icon_48);
+  }
+
 }

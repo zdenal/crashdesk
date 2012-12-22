@@ -6,6 +6,7 @@ class Crashdesk.Views.AppsShow extends Backbone.View
 
   events:
     'click #settings': 'showSettings'
+    'click #add': 'newApp'
 
   initialize: ->
     @apps = @options.apps
@@ -14,6 +15,9 @@ class Crashdesk.Views.AppsShow extends Backbone.View
     @collection.on('reset', @render, this)
     @settings = new Crashdesk.Views.AppsSettings
       model: @model
+    @form = new Crashdesk.Views.AppsForm
+      model: new Crashdesk.Models.App
+      collection: @apps
 
   render: ->
     $(@el).html @template
@@ -31,6 +35,10 @@ class Crashdesk.Views.AppsShow extends Backbone.View
   showSettings: (e) ->
     e.preventDefault()
     @settings.render().el
+
+  newApp: (e) ->
+    e.preventDefault()
+    @form.render().el
 
   getErrors: ->
     @collection = new Crashdesk.Collections.Errors()

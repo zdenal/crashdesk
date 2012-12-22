@@ -6,17 +6,16 @@ class Crashdesk.Views.AppsForm extends Backbone.View
 
   serialize: ->
     name        : this.$('#app_name').val()
-    app_type_id : this.$('#app_app_type_id').val()
 
   events:
     'submit form'  : 'createOrUpdateApp'
 
   initialize: ->
     $('#app_form').remove()
-    @model.on('error', @render, this)
+    @model.on('change:errors', @render, this)
 
   render: ->
-    $(@el).html(@template(app: @model, errors: @errors))
+    $(@el).html(@template(app: @model))
     $(@el).modal()
     this
 
@@ -31,17 +30,20 @@ class Crashdesk.Views.AppsForm extends Backbone.View
     event.preventDefault()
     @collection.create @serialize(),
       wait: true
-      success: => $(@el).modal('hide')
+      success: @handleSuccess
       error: @handleError
 
   updateApp: ->
     event.preventDefault()
     @model.save @serialize(),
       wait: true
-      success: => $(@el).modal('hide')
+      success: @handleSuccess
       error: @handleError
+
+  handleSuccess: (model) =>
+    $(@el).modal('hide')
+    Backbone.history.navigate("#{model.id}/errors", true)
 
   handleError: (model, response) =>
     if response.status == 422
-      @errors = $.parseJSON(response.responseText).errors
-      @model.trigger('error')
+      @model.set("errors", $.parseJSON(response.responseText).errors)
