@@ -9,10 +9,13 @@ class Crashdesk.Views.AppsSettings extends Backbone.View
 
   initialize: ->
     #@model.on('reset', @render, this)
+    @code = new Crashdesk.Views.AppsCode
+      model: @model
 
   render: ->
     $(@el).html @template
       app: @model
+    this.$('.modal-body').prepend(@code.render().el)
     $(@el).modal()
     this
 

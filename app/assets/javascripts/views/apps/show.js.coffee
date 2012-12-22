@@ -18,15 +18,15 @@ class Crashdesk.Views.AppsShow extends Backbone.View
     @form = new Crashdesk.Views.AppsForm
       model: new Crashdesk.Models.App
       collection: @apps
+    @error_list = new Crashdesk.Views.ErrorsList
+      collection : @collection
+      app        : @model
 
   render: ->
     $(@el).html @template
       apps: @apps
       app: @model
-    error_list = new Crashdesk.Views.ErrorsList
-      collection : @collection
-      app        : @model
-    this.$('#endless_list #error_list').html(error_list.render().el)
+    this.$('#endless_list #error_list').html(@error_list.render().el)
     scroller = new EndlessScroller @collection,
       window     : this.$('#endless_list')
       list       : this.$('#endless_list #errors')

@@ -5,9 +5,8 @@
     <h3><%= @app.get('name') %> settings</h3>
 	</div>
 
-
-  <a class="app-delete" href="#"><i class="icon-trash"></i> Delete</a>
 	<div class="modal-body">
+    <a class="app-delete" href="#"><i class="icon-trash"></i> Delete</a>
 		<div class="form-actions">
       <button type="button" data-dismiss="modal" class="btn btn-link">Close</button>
 		</div>
