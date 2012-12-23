@@ -1,0 +1,22 @@
+<% form = new FormHelper @collaborator, name: 'collaborator' %>
+<form class="form-horizontal">
+
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+			<h3>Add Collaborator</h3>
+	</div>
+
+
+	<div class="modal-body">
+		<div class="control-group">
+      <%- form.text_field 'email', class: 'input-medium', placeholder: 'Email' %>
+    </div>
+  </div>
+
+		<div class="form-actions">
+      <input type="submit" class="btn btn-primary" value="Add" />
+			<a href="#" data-dismiss="modal" class="btn">Cancel</a>
+		</div>
+	</div>
+
+</form>

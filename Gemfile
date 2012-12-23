@@ -41,6 +41,12 @@ end
 group :development, :test do
   gem 'debugger'
   gem 'faker'
+  gem "mocha", :require => false
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'fuubar'
 end
 
 # To use ActiveModel has_secure_password

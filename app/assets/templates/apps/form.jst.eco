@@ -12,8 +12,9 @@
 
 
 	<div class="modal-body">
-		<div class="control-group <%= 'error' if @errors?.name %>">
+		<div class="control-group">
       <%- form.text_field 'name', class: 'input-medium', placeholder: 'Name' %>
+      &nbsp;or fill code of existing
 		</div>
 
 		<div class="form-actions">

@@ -2,12 +2,13 @@ class Api::AppsController < ApplicationController
 
   respond_to :json
 
+  before_filter :get_app, only: [:show, :update, :destroy]
+
   def index
     @apps = current_user.apps.all
   end
 
   def show
-    @app = current_user.apps.find(params[:id])
   end
 
   def create
@@ -20,11 +21,17 @@ class Api::AppsController < ApplicationController
   end
 
   def update
-    respond_with current_user.apps.find(params[:id]).update_attributes(params[:app])
+    respond_with @app.update_attributes(params[:app])
   end
 
   def destroy
-    respond_with current_user.apps.find(params[:id]).destroy
+    respond_with @app.remove_collaborator(current_user)
+  end
+
+  private
+
+  def get_app
+    @app = current_user.apps.find(params[:id])
   end
 
 end

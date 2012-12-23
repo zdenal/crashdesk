@@ -6,18 +6,19 @@ class Crashdesk.Views.AppsShow extends Backbone.View
 
   events:
     'click #settings': 'showSettings'
-    'click #add': 'newApp'
+    'click #add_app': 'newApp'
+    'click #add_collaborator': 'newCollaborator'
 
   initialize: ->
     @apps = @options.apps
     @getErrors()
+    @getCollaborators()
     @model.on('reset', @render, this)
     @collection.on('reset', @render, this)
     @settings = new Crashdesk.Views.AppsSettings
       model: @model
-    @form = new Crashdesk.Views.AppsForm
-      model: new Crashdesk.Models.App
-      collection: @apps
+    @form = @apps.get_form(new Crashdesk.Models.App)
+    @collaborator_form = @collaborators.get_form(new Crashdesk.Models.Collaborator)
     @error_list = new Crashdesk.Views.ErrorsList
       collection : @collection
       app        : @model
@@ -40,8 +41,16 @@ class Crashdesk.Views.AppsShow extends Backbone.View
     e.preventDefault()
     @form.render().el
 
+  newCollaborator: (e) ->
+    e.preventDefault()
+    @collaborator_form.render().el
+
   getErrors: ->
     @collection = new Crashdesk.Collections.Errors()
     @collection.fetch
       data:
         app_id: @model.id
+
+  getCollaborators: ->
+    @collaborators = new Crashdesk.Collections.Collaborators().set_app(@model)
+    @collaborators.fetch

@@ -5,6 +5,7 @@ Crashdesk::Application.routes.draw do
   namespace "api" do
     resources :apps
     resources :errors
+    resources :collaborators
   end
 
   resources :apps
