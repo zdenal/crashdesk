@@ -8,7 +8,7 @@ class TmpUser
   has_and_belongs_to_many :apps
 
   # Validations
-  validates :email, presence: true
-  validates_uniqueness_of :email
+  validates :email, email: true, allow_blank: true,
+    uniqueness: true
 
 end
