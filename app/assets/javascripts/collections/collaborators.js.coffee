@@ -1,5 +1,7 @@
 class Crashdesk.Collections.Collaborators extends Backbone.Collection
 
+  model: Crashdesk.Models.Collaborator
+
   url: ->
     "/api/collaborators?app_id=#{@app.id}"
 
@@ -7,10 +9,10 @@ class Crashdesk.Collections.Collaborators extends Backbone.Collection
     @app = app
     @
 
-  get_form: (collaborator) ->
+  get_form: () ->
     unless @app?
       throw 'Please define app for collaborators by "set_app"'
     new Crashdesk.Views.CollaboratorsForm
-      model      : collaborator
+      model      : new Crashdesk.Models.Collaborator
       app        : @app
       collection : @

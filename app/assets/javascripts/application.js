@@ -29,6 +29,7 @@
 //= require prettify
 //= require_tree ../templates
 //= require_tree ./models
+//= require_tree ./decorators
 //= require_tree ./lib
 //= require_tree ./collections
 //= require_tree ./views

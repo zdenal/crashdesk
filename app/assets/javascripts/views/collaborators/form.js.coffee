@@ -5,7 +5,8 @@ class Crashdesk.Views.CollaboratorsForm extends Backbone.View
   template: JST['collaborators/form']
 
   serialize: ->
-    email   : this.$('#collaborator_email').val()
+    email  : this.$('#collaborator_email').val()
+    app_id : @app.id
 
   events:
     'submit form'  : 'addCollaborator'
@@ -16,7 +17,9 @@ class Crashdesk.Views.CollaboratorsForm extends Backbone.View
     @app = @options.app
 
   render: ->
-    $(@el).html(@template(collaborator: @model))
+    $(@el).html @template
+      collaborator: @model
+      collaborators: @collection.models
     $(@el).modal()
     this
 

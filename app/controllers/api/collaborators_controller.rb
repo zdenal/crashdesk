@@ -3,17 +3,19 @@ class Api::CollaboratorsController < ApplicationController
   before_filter :get_app
 
   def index
-    respond_with @app.users
+    @collaborators = @app.users + @app.tmp_users
   end
 
   def create
-    collaborator = User.where(email: params[:collaborator][:email]).first
-    collaborator ||= TmpUser.find_or_initialize_by(params[:collaborator])
-    if collaborator.valid? && @app.add_collaborator(collaborator)
-      collaborator.save
-      render json: collaborator, status: :ok
+    @collaborator = Crashdesk::Services::AddCollaboratorToApp.new(
+      app: @app,
+      params: params[:collaborator],
+      current_user: current_user
+    ).run
+    if @collaborator.persisted?
+      render 'show'
     else
-      respond_with collaborator, status: :unprocessable_entity
+      respond_with @collaborator, status: :unprocessable_entity
     end
   end
 

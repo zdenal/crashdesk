@@ -21,6 +21,7 @@ gem 'rvm-capistrano'
 #gem 'backbone_form_helper', git: 'git@github.com:zdenal/backbone_form_helper.git'
 gem 'backbone_form_helper'
 gem 'jbuilder'
+gem 'awesome_print'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,6 +37,10 @@ group :assets do
   gem 'compass-rails'
   gem 'bootstrap-sass'
   gem 'bootstrap-datepicker-rails'
+end
+
+group :development do
+  gem "letter_opener"
 end
 
 group :development, :test do

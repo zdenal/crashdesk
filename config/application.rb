@@ -57,3 +57,5 @@ module Crashdesk
     config.assets.version = '1.0'
   end
 end
+
+require 'woo'

@@ -1,0 +1,9 @@
+<h1>You were added to tracking errors on <%= @app.name %> project</h1>
+<p>
+  User <%= @inviter.name %> invited you to tracking errors in project <%= @app.name %>
+</p>
+<% if @new_user.respond_to?(:create_user) %>
+  <p>
+    Please sign in on Crashde.sk and fill this email for adding related project into you account.
+  </p>
+<% end %>

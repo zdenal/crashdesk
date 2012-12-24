@@ -18,7 +18,7 @@ class Crashdesk.Views.AppsShow extends Backbone.View
     @settings = new Crashdesk.Views.AppsSettings
       model: @model
     @form = @apps.get_form(new Crashdesk.Models.App)
-    @collaborator_form = @collaborators.get_form(new Crashdesk.Models.Collaborator)
+    @collaborator_form = @collaborators.get_form()
     @error_list = new Crashdesk.Views.ErrorsList
       collection : @collection
       app        : @model
@@ -53,4 +53,4 @@ class Crashdesk.Views.AppsShow extends Backbone.View
 
   getCollaborators: ->
     @collaborators = new Crashdesk.Collections.Collaborators().set_app(@model)
-    @collaborators.fetch
+    @collaborators.fetch()

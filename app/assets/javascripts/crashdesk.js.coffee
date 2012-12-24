@@ -3,6 +3,7 @@ window.Crashdesk =
   Collections: {}
   Views: {}
   Routers: {}
+  Decorators: {}
   init: ->
     new Crashdesk.Routers.Apps()
     Backbone.history.start()

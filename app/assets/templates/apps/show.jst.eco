@@ -1,10 +1,10 @@
 <section id="icons-bar">
-  <a href="#" class="icon-48 home clickable" title="home" rel="tooltip" data-delay-hide="10000">&nbsp;</a>
+  <a href="#" class="icon-48 home clickable" title="home">&nbsp;</a>
   <hr />
-  <a id="add_app" href="#" class="icon-48 plus clickable" title="application errors" rel="tooltip">&nbsp;</a>
-  <a href="#" class="icon-48 app_cross clickable" title="application errors" rel="tooltip">&nbsp;</a>
-  <a href="#" class="icon-48 delete_server clickable" title="HW/hosting errors" rel="tooltip">&nbsp;</a>
-  <a id="add_collaborator" href="#" class="icon-48 users clickable" title="issues" rel="tooltip">&nbsp;</a>
+  <a id="add_app" href="#" class="icon-48 plus clickable" title="application errors">&nbsp;</a>
+  <a href="#" class="icon-48 app_cross clickable" title="application errors">&nbsp;</a>
+  <a href="#" class="icon-48 delete_server clickable" title="HW/hosting errors">&nbsp;</a>
+  <a id="add_collaborator" href="#" class="icon-48 users clickable">&nbsp;</a>
   <hr />
   <a href="#" class="icon-48 zoom clickable">&nbsp;</a>
   <hr />

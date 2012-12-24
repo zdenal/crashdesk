@@ -8,6 +8,14 @@
 
 
 	<div class="modal-body">
+    <h4>Collaborators:</h4>
+    <ul class="inline">
+      <% for collaborator in @collaborators: %>
+        <li>
+          <%= collaborator.decorator().list_name() %>
+        </li>
+      <% end %>
+    </ul>
 		<div class="control-group">
       <%- form.text_field 'email', class: 'input-medium', placeholder: 'Email' %>
     </div>
