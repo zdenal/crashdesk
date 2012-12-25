@@ -17,7 +17,7 @@ describe App do
       app.users.should have(1).items
     end
 
-    context 'when we are adding existing user to app' do
+    describe 'adding existing user to app' do
 
       it "should add Laco to collaborators" do
         lambda {
@@ -35,7 +35,7 @@ describe App do
 
     end
 
-    context 'when we are adding new user to app' do
+    describe 'adding new user to app' do
 
       it "should add new user to tmp_users collaborators" do
         lambda {
@@ -54,7 +54,7 @@ describe App do
 
     end
 
-    context 'when we add new app to tmp_user' do
+    describe 'add new app to tmp_user' do
       let(:app2) { FactoryGirl.create(:app) }
       before do
         app.add_collaborator(tmp_user)
@@ -67,7 +67,7 @@ describe App do
       end
     end
 
-    context 'when we remove collaborator from app' do
+    describe 'remove collaborator from app' do
       before(:all) do
         app.add_collaborator(laco)
       end

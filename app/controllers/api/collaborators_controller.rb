@@ -10,7 +10,7 @@ class Api::CollaboratorsController < ApplicationController
     @collaborator = Crashdesk::Services::AddCollaboratorToApp.new(
       app: @app,
       params: params[:collaborator],
-      current_user: current_user
+      inviter: current_user
     ).run
     if @collaborator.persisted?
       render 'show'
