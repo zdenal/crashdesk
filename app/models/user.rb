@@ -27,18 +27,4 @@ class User
 
   has_and_belongs_to_many :apps
 
-  def self.from_omniauth(auth)
-    if Rails.env.development?
-      auth.uid = auth.info.name
-    end
-    find_or_create_by(auth.slice(:provider, :uid)) do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.email = auth.info.email
-      # for skip email validation now
-      user.skip_email_validation = true
-    end
-  end
-
 end

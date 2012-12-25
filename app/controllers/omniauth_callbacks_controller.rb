@@ -1,7 +1,7 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def all
-    @user = User.from_omniauth(request.env["omniauth.auth"])
+    @user = Crashdesk::Services::SignIn.new(request.env["omniauth.auth"]).run!
     sign_in @user
     unless @user.email?
       redirect_to edit_user_registration_url
