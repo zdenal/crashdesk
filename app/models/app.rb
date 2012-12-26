@@ -15,8 +15,8 @@ class App
   validates :name, presence: true
   validates_uniqueness_of :name
 
-  def remove_collaborator(collaborator)
-    users.delete(collaborator)
+  def remove_collaborators(collaborators)
+    users.where(:id.in => Array(collaborators).map(&:id)).delete_all
     destroy unless users.exists?
   end
 

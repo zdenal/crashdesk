@@ -68,16 +68,16 @@ describe App do
     end
 
     describe 'remove collaborator from app' do
-      before(:all) do
+      before do
         app.add_collaborator(laco)
       end
       it "should remove Laco from app" do
-        app.remove_collaborator(laco)
+        app.remove_collaborators(laco)
         app.users.should_not include(laco)
         assert(app.persisted?)
       end
       it "should remove app with last collaborator" do
-        app.remove_collaborator(zdenal)
+        app.remove_collaborators([laco, zdenal])
         app.users.should be_blank
         assert(app.deleted?)
       end

@@ -25,7 +25,7 @@ class Api::AppsController < ApplicationController
   end
 
   def destroy
-    respond_with @app.remove_collaborator(current_user)
+    respond_with @app.remove_collaborators(current_user)
   end
 
   private
