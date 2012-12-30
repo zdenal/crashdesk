@@ -81,6 +81,12 @@ describe App do
         app.users.should be_blank
         assert(app.deleted?)
       end
+      it "should not remove collaborator and remove app from his apps" do
+        laco.apps.should include(app)
+        app.remove_collaborators(laco)
+        User.all.should include(laco)
+        laco.reload.apps.should_not include(app)
+      end
     end
 
   end

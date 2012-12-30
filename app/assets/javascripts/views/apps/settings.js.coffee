@@ -8,7 +8,6 @@ class Crashdesk.Views.AppsSettings extends Backbone.View
     'click .app-delete': 'destroy'
 
   initialize: ->
-    #@model.on('reset', @render, this)
     @code = new Crashdesk.Views.AppsCode
       model: @model
 
@@ -24,4 +23,4 @@ class Crashdesk.Views.AppsSettings extends Backbone.View
     @model.destroy()
     @$el.modal('hide')
     @$el.remove()
-    Backbone.history.navigate("/", true)
+    Backbone.history.navigate("", true)

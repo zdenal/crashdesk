@@ -13,10 +13,13 @@ class App
 
   # Validations
   validates :name, presence: true
-  validates_uniqueness_of :name
 
   def remove_collaborators(collaborators)
-    users.where(:id.in => Array(collaborators).map(&:id)).delete_all
+    # can't use delete_all with conditions or
+    # users.where(:id.in => Array(collaborators).map(&:id)).delete_all, because
+    # it delete also user himself. Didn't find the way
+    # for mass deleting with automated sync on user site in 'user.apps'.
+    Array(collaborators).each {|c| users.delete(c)}
     destroy unless users.exists?
   end
 
